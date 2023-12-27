@@ -2,7 +2,7 @@
 Repository file DBC RaceUP.
 
 ## Istruzioni per l'uso
-La repo contiene i file .dbc che descrivono sia CAN1 (inverter) che CAN2 (vettura), e la libreria dbcc [link]('https://github.com/howerj/dbcc') per la generazione delle librerie/file.
+La repo contiene i file .dbc che descrivono sia CAN1 (inverter) che CAN2 (vettura), e la libreria [dbcc](https://github.com/howerj/dbcc) per la generazione delle librerie/file.
 
 1. Compilare dbcc (necessario compilatore C e make)
 ```
