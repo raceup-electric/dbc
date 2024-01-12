@@ -115,9 +115,11 @@ BO_ 99 Map: 1 SW
 BO_ 84 Paddle: 1 SW
  SG_ regen : 0|8@1+ (1,0) [0|100] "%"  VCU
 
-BO_ 258 SuspFront: 3 ATC
+BO_ 258 SuspFront: 5 ATC
  SG_ susp_fr : 0|10@1+ (1,0) [0|0] "mm"  VCU
  SG_ susp_fl : 10|10@1+ (1,0) [0|0] "mm"  VCU
+ SG_ temp_mr : 20|10@1+ (1,0) [0|0] "c" VCU
+ SG_ temp_ml : 30|10@1+ (1,0) [0|0] "c" VCU
 
 
 
@@ -168,4 +170,6 @@ CM_ SG_ 99 regen "Map selected for regen braking";
 CM_ SG_ 84 regen "% of regen paddle travel";
 CM_ SG_ 258 susp_fr "FR suspension travel in mm";
 CM_ SG_ 258 susp_fl "FL suspension travel in mm";
+CM_ SG_ 258 temp_fl "FL motor temp in degree";
+CM_ SG_ 258 temp_fl "FL motor temp in degree";
 
