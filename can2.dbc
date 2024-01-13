@@ -108,7 +108,7 @@ BO_ 83 Driver: 4 ATC
 BO_ 305 Calib: 1 SW
  SG_ position M : 0|8@1+ (1,0) [0|1] "high"  ATC
 
-BO_ 305 CalibStep: 1 ATC 
+BO_ 305 CalibAck: 1 ATC 
  SG_ position M : 0|8@1+ (1,0) [0|1] "high"  SW
 
 BO_ 99 Map: 1 SW
