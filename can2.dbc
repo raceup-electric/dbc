@@ -1,4 +1,4 @@
-VERSION ""
+VERSION "HIPBNYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY/4/%%%/4/'%**4YYY///"
 
 
 NS_ : 
@@ -22,14 +22,6 @@ NS_ :
 	SIG_GROUP_
 	SIG_VALTYPE_
 	SIGTYPE_VALTYPE_
-	BO_TX_BU_
-	BA_DEF_REL_
-	BA_REL_
-	BA_DEF_DEF_REL_
-	BU_SG_REL_
-	BU_EV_REL_
-	BU_BO_REL_
-	SG_MUL_VAL_
 
 BS_:
 
@@ -104,6 +96,7 @@ BO_ 83 Driver: 4 ATC
  SG_ throttle : 0|8@1+ (1,0) [0|100] "%"  VCU,SW
  SG_ brake : 8|8@1+ (1,0) [0|100] "%"  VCU,SW
  SG_ steering : 16|12@1- (1,0) [-1570|1570] "mrad"  VCU,SW
+ SG_ implausibility : 28|4@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 305 Calib: 1 SW
  SG_ position M : 0|8@1+ (1,0) [0|1] "high"  ATC
@@ -130,6 +123,23 @@ BO_ 99 IMUCalib: 1 SMU
 BO_ 297 FanBatt: 1 VCU
  SG_ fan_battery_enable : 0|1@1+ (1,0) [0|0] "" Vector__XXX
 
+BO_ 102 CarSettings: 8 VCU
+ SG_ max_regen_current : 0|8@1+ (1,0) [0|150] "A" Vector__XXX
+ SG_ pwr_limit : 8|8@1+ (1,0) [0|80] "kW" Vector__XXX
+ SG_ speed_lim : 16|16@1+ (1,0) [0|0] "rpm" Vector__XXX
+ SG_ max_pos_trq : 32|8@1+ (1,0) [0|0] "Nm" Vector__XXX
+ SG_ max_neg_trq : 40|8@1- (1,0) [0|0] "Nm" Vector__XXX
+ SG_ torque_rep_front : 48|8@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ torque_rep_rear : 56|8@1+ (0.01,0) [0|0] "" Vector__XXX
+
+BO_ 101 CarStatus: 8 VCU
+ SG_ HV_on : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ R2D : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ air1 : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ RF : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ air2 : 4|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ precharge : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ speed : 8|8@1+ (1,0) [0|0] "km/h" Vector__XXX
 
 
 CM_ SG_ 85 max_volt "Maximum cell voltage in mv";
@@ -173,6 +183,7 @@ CM_ SG_ 304 pump_speed "Water pump speed";
 CM_ SG_ 83 throttle "% of throttle";
 CM_ SG_ 83 brake "% of brake pedal";
 CM_ SG_ 83 steering "Steering angle in milli radians";
+CM_ SG_ 83 implausibility "Implausibility type";
 CM_ SG_ 305 position "Set calibration of rest value (0) or 100% (1)";
 CM_ SG_ 100 power "Map selected number";
 CM_ SG_ 100 regen "Map selected for regen braking";
@@ -181,4 +192,11 @@ CM_ SG_ 260 susp_fr "FR suspension travel in mm";
 CM_ SG_ 260 susp_fl "FL suspension travel in mm";
 CM_ SG_ 297 fan_battery_enable "fan battery on / off
 ";
-
+CM_ SG_ 102 max_regen_current "Maximum Regen Current";
+CM_ SG_ 102 pwr_limit "Maximum power limit";
+CM_ SG_ 102 speed_lim "Maximum Speed Limit";
+CM_ SG_ 102 max_pos_trq "Maximum Positive Torque";
+CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
+CM_ SG_ 102 torque_rep_front "Torque Repartition Front";
+CM_ SG_ 102 torque_rep_rear "Torque Repartition Rear";
+VAL_ 83 implausibility 0 "No implausability" 1 "Brake and throttle pedals" 2 "Brake paddle and throttle pedal" 3 "Throttle potentiometers" ;
