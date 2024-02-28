@@ -1,4 +1,4 @@
-VERSION "HIPBNYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY/4/%%%/4/'%**4YYY///"
+VERSION ""
 
 
 NS_ : 
@@ -22,6 +22,14 @@ NS_ :
 	SIG_GROUP_
 	SIG_VALTYPE_
 	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
 
 BS_:
 
@@ -132,7 +140,7 @@ BO_ 102 CarSettings: 8 VCU
  SG_ torque_rep_front : 48|8@1+ (0.01,0) [0|0] "" Vector__XXX
  SG_ torque_rep_rear : 56|8@1+ (0.01,0) [0|0] "" Vector__XXX
 
-BO_ 101 CarStatus: 8 VCU
+BO_ 101 CarStatus: 2 VCU
  SG_ HV_on : 0|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ R2D : 1|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ air1 : 3|1@1+ (1,0) [0|0] "" Vector__XXX
@@ -140,6 +148,7 @@ BO_ 101 CarStatus: 8 VCU
  SG_ air2 : 4|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ precharge : 5|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ speed : 8|8@1+ (1,0) [0|0] "km/h" Vector__XXX
+
 
 
 CM_ SG_ 85 max_volt "Maximum cell voltage in mv";
@@ -200,3 +209,4 @@ CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
 CM_ SG_ 102 torque_rep_front "Torque Repartition Front";
 CM_ SG_ 102 torque_rep_rear "Torque Repartition Rear";
 VAL_ 83 implausibility 0 "No implausability" 1 "Brake and throttle pedals" 2 "Brake paddle and throttle pedal" 3 "Throttle potentiometers" ;
+
