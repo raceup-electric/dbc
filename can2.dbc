@@ -208,5 +208,5 @@ CM_ SG_ 102 max_pos_trq "Maximum Positive Torque";
 CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
 CM_ SG_ 102 torque_rep_front "Torque Repartition Front";
 CM_ SG_ 102 torque_rep_rear "Torque Repartition Rear";
-VAL_ 83 implausibility 0 "No implausability" 1 "Brake and throttle pedals" 2 "Brake paddle and throttle pedal" 3 "Throttle potentiometers" ;
+VAL_ 83 implausibility 0 "No implausability" 2 "Brake and throttle pedals" 4 "Paddle and throttle pedal" 8 "Throttle potentiometers" ;
 
