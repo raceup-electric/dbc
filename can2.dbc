@@ -104,7 +104,10 @@ BO_ 83 Driver: 4 ATC
  SG_ throttle : 0|8@1+ (1,0) [0|100] "%"  VCU,SW
  SG_ brake : 8|8@1+ (1,0) [0|100] "%"  VCU,SW
  SG_ steering : 16|12@1- (1,0) [-1570|1570] "mrad"  VCU,SW
- SG_ implausibility : 28|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ no_implausibility : 28|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bre_implausibility : 29|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pad_implausibility : 30|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pot_implausibility : 31|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 305 Calib: 1 SW
  SG_ position M : 0|8@1+ (1,0) [0|1] "high"  ATC
@@ -199,8 +202,7 @@ CM_ SG_ 100 regen "Map selected for regen braking";
 CM_ SG_ 84 regen "% of regen paddle travel";
 CM_ SG_ 260 susp_fr "FR suspension travel in mm";
 CM_ SG_ 260 susp_fl "FL suspension travel in mm";
-CM_ SG_ 297 fan_battery_enable "fan battery on / off
-";
+CM_ SG_ 297 fan_battery_enable "fan battery on / off";
 CM_ SG_ 102 max_regen_current "Maximum Regen Current";
 CM_ SG_ 102 pwr_limit "Maximum power limit";
 CM_ SG_ 102 speed_lim "Maximum Speed Limit";
@@ -209,4 +211,3 @@ CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
 CM_ SG_ 102 torque_rep_front "Torque Repartition Front";
 CM_ SG_ 102 torque_rep_rear "Torque Repartition Rear";
 VAL_ 83 implausibility 0 "No implausability" 2 "Brake and throttle pedals" 4 "Paddle and throttle pedal" 8 "Throttle potentiometers" ;
-
