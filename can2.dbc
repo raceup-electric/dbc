@@ -76,16 +76,16 @@ BO_ 98 Imu3: 8 SMU
  SG_ omega_z : 32|32@1- (1,0) [0|0] "rad/s"  VCU
 
 BO_ 256 Temp1: 8 SMU
- SG_ r_inv_temp_in : 0|16@1+ (1,0) [0|0] "C"  VCU
- SG_ r_inv_temp_out : 16|16@1+ (1,0) [0|0] "C"  VCU
- SG_ l_inv_temp_in : 32|16@1+ (1,0) [0|0] "C"  VCU
- SG_ l_inv_temp_out : 48|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_coldplate_post_RL : 0|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_coldplate_post_RR : 16|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_coldplate_pre_RR : 32|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_coldplate_pre_RL : 48|16@1+ (1,0) [0|0] "C"  VCU
 
 BO_ 257 Temp2: 8 SMU
- SG_ r_mot_temp_in : 0|16@1+ (1,0) [0|0] "C"  VCU
- SG_ r_mot_temp_out : 16|16@1+ (1,0) [0|0] "C"  VCU
- SG_ l_mot_temp_in : 32|16@1+ (1,0) [0|0] "C"  VCU
- SG_ l_mot_temp_out : 48|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_mot_post_RL : 0|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_mot_post_RR : 16|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_mot_pre_RR : 32|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_mot_pre_RL : 48|16@1+ (1,0) [0|0] "C"  VCU
 
 BO_ 258 SuspRear: 3 SMU
  SG_ susp_rr : 0|10@1+ (1,0) [0|0] "mm"  VCU
@@ -125,8 +125,8 @@ BO_ 84 Paddle: 1 SW
 BO_ 260 SuspFront: 5 ATC
  SG_ susp_fr : 0|10@1+ (1,0) [0|0] "mm"  VCU
  SG_ susp_fl : 10|10@1+ (1,0) [0|0] "mm"  VCU
- SG_ temp_mr : 20|10@1+ (1,0) [0|0] "c"  VCU
- SG_ temp_ml : 30|10@1+ (1,0) [0|0] "c"  VCU
+ SG_ temp_mot_pot_FR : 20|10@1+ (1,0) [0|0] "c"  VCU
+ SG_ temp_mot_pre_FR : 30|10@1+ (1,0) [0|0] "c"  VCU
 
 BO_ 99 IMUCalib: 1 SMU
  SG_ start_imu_calibration : 0|1@1+ (1,0) [0|0] "" Vector__XXX
@@ -177,14 +177,15 @@ CM_ SG_ 97 acc_z "Acceleration on z axis in m/s^2";
 CM_ SG_ 97 omega_x "Angular speed on x axis in rad/s";
 CM_ SG_ 98 omega_y "Angular speed on x axis in rad/s";
 CM_ SG_ 98 omega_z "Angular speed on x axis in rad/s";
-CM_ SG_ 256 r_inv_temp_in "Right inverter inlet water temperature";
-CM_ SG_ 256 r_inv_temp_out "Right inverter outlet water temperature";
-CM_ SG_ 256 l_inv_temp_in "Left inverter inlet water temperature";
-CM_ SG_ 256 l_inv_temp_out "Left inverter outlet water temperature";
-CM_ SG_ 257 r_mot_temp_in "Right motor inlet water temperature";
-CM_ SG_ 257 r_mot_temp_out "Right motor outlet water temperature";
-CM_ SG_ 257 l_mot_temp_in "Left motor inlet water temperature";
-CM_ SG_ 257 l_mot_temp_out "Left motor outlet water temperature";
+CM_ SG_ 256 temp_coldplate_post_RL "";
+CM_ SG_ 256 temp_coldplate_post_RR "";
+CM_ SG_ 256 temp_coldplate_pre_RR "";
+CM_ SG_ 256 temp_coldplate_pre_RL "";
+CM_ SG_ 257 temp_mot_post_RL "";
+CM_ SG_ 257 temp_mot_post_RR "
+";
+CM_ SG_ 257 temp_mot_pre_RR "";
+CM_ SG_ 257 temp_mot_pre_RL "";
 CM_ SG_ 258 susp_rr "RR suspension travel in mm";
 CM_ SG_ 258 susp_rl "RL suspension travel in mm";
 CM_ SG_ 288 car_voltage "Voltage seen from car side (inverter) in volts";
@@ -195,7 +196,6 @@ CM_ SG_ 304 pump_speed "Water pump speed";
 CM_ SG_ 83 throttle "% of throttle";
 CM_ SG_ 83 brake "% of brake pedal";
 CM_ SG_ 83 steering "Steering angle in milli radians";
-CM_ SG_ 83 implausibility "Implausibility type";
 CM_ SG_ 305 position "Set calibration of rest value (0) or 100% (1)";
 CM_ SG_ 100 power "Map selected number";
 CM_ SG_ 100 regen "Map selected for regen braking";
@@ -210,4 +210,4 @@ CM_ SG_ 102 max_pos_trq "Maximum Positive Torque";
 CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
 CM_ SG_ 102 torque_rep_front "Torque Repartition Front";
 CM_ SG_ 102 torque_rep_rear "Torque Repartition Rear";
-VAL_ 83 implausibility 0 "No implausability" 2 "Brake and throttle pedals" 4 "Paddle and throttle pedal" 8 "Throttle potentiometers" ;
+
