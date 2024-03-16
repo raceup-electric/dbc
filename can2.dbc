@@ -36,6 +36,11 @@ BS_:
 BU_: BMSHV BMSLV ATC SW VCU SMU PCU LEM AMK
 
 
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ temp_mot_pre_FR : 30|10@1+ (1,0) [0|0] "c"  VCU
+ SG_ temp_mot_pot_FR : 20|10@1+ (1,0) [0|0] "c"  VCU
+ SG_ fan_battery_enable : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+
 BO_ 85 BmsHv1: 7 BMSHV
  SG_ max_volt : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ min_volt : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
@@ -125,14 +130,9 @@ BO_ 84 Paddle: 1 SW
 BO_ 260 SuspFront: 5 ATC
  SG_ susp_fr : 0|10@1+ (1,0) [0|0] "mm"  VCU
  SG_ susp_fl : 10|10@1+ (1,0) [0|0] "mm"  VCU
- SG_ temp_mot_pot_FR : 20|10@1+ (1,0) [0|0] "c"  VCU
- SG_ temp_mot_pre_FR : 30|10@1+ (1,0) [0|0] "c"  VCU
 
 BO_ 99 IMUCalib: 1 SMU
  SG_ start_imu_calibration : 0|1@1+ (1,0) [0|0] "" Vector__XXX
-
-BO_ 297 FanBatt: 1 VCU
- SG_ fan_battery_enable : 0|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 102 CarSettings: 8 VCU
  SG_ max_regen_current : 0|8@1+ (1,0) [0|150] "A" Vector__XXX
@@ -152,8 +152,13 @@ BO_ 101 CarStatus: 2 VCU
  SG_ precharge : 5|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ speed : 8|8@1+ (1,0) [0|0] "km/h" Vector__XXX
 
+BO_ 261 TempFrontR: 8 ATC
+ SG_ temp_mot_pot_FR : 0|10@1+ (1,0) [0|0] "C" Vector__XXX
+ SG_ temp_mot_pre_FR : 10|10@1+ (1,0) [0|0] "C" Vector__XXX
 
 
+
+CM_ SG_ 3221225472 fan_battery_enable "fan battery on / off";
 CM_ SG_ 85 max_volt "Maximum cell voltage in mv";
 CM_ SG_ 85 min_volt "Minimum cell voltage in mv";
 CM_ SG_ 85 avg_volt "Average cell voltage in mv";
@@ -202,7 +207,6 @@ CM_ SG_ 100 regen "Map selected for regen braking";
 CM_ SG_ 84 regen "% of regen paddle travel";
 CM_ SG_ 260 susp_fr "FR suspension travel in mm";
 CM_ SG_ 260 susp_fl "FL suspension travel in mm";
-CM_ SG_ 297 fan_battery_enable "fan battery on / off";
 CM_ SG_ 102 max_regen_current "Maximum Regen Current";
 CM_ SG_ 102 pwr_limit "Maximum power limit";
 CM_ SG_ 102 speed_lim "Maximum Speed Limit";
