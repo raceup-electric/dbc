@@ -96,7 +96,7 @@ BO_ 258 SuspRear: 3 SMU
  SG_ susp_rr : 0|10@1+ (1,0) [0|0] "mm"  VCU
  SG_ susp_rl : 10|10@1+ (1,0) [0|0] "mm"  VCU
 
-BO_ 288 InvVolt: 4 AMK
+BO_ 288 InvVolt: 2 AMK
  SG_ car_voltage : 0|16@1+ (1,0) [0|600] "V"  VCU,SW,BMSHV
 
 BO_ 304 Pcu: 2 VCU
