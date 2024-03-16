@@ -127,7 +127,7 @@ BO_ 100 Map: 1 SW
 BO_ 84 Paddle: 1 SW
  SG_ regen : 0|8@1+ (1,0) [0|100] "%"  VCU
 
-BO_ 260 SuspFront: 5 ATC
+BO_ 260 SuspFront: 3 ATC
  SG_ susp_fr : 0|10@1+ (1,0) [0|0] "mm"  VCU
  SG_ susp_fl : 10|10@1+ (1,0) [0|0] "mm"  VCU
 
@@ -152,7 +152,7 @@ BO_ 101 CarStatus: 2 VCU
  SG_ precharge : 5|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ speed : 8|8@1+ (1,0) [0|0] "km/h" Vector__XXX
 
-BO_ 261 TempFrontR: 8 ATC
+BO_ 261 TempFrontR: 3 ATC
  SG_ temp_mot_pot_FR : 0|10@1+ (1,0) [0|0] "C" Vector__XXX
  SG_ temp_mot_pre_FR : 10|10@1+ (1,0) [0|0] "C" Vector__XXX
 
