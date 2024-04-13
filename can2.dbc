@@ -41,25 +41,25 @@ BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ temp_mot_pot_FR : 20|10@1+ (1,0) [0|0] "c"  VCU
  SG_ fan_battery_enable : 0|1@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 85 BmsHv1: 7 BMSHV
+BO_ 87 BmsHv1: 7 BMSHV
  SG_ max_volt : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ min_volt : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ avg_volt : 32|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ soc : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
 
-BO_ 86 BmsHv2: 7 BMSHV
+BO_ 88 BmsHv2: 7 BMSHV
  SG_ max_temp : 0|16@1+ (1,0) [0|0] "C"  VCU,SW
  SG_ min_temp : 16|16@1+ (1,0) [0|0] "C"  VCU,SW
  SG_ avg_temp : 32|16@1+ (1,0) [0|0] "C"  VCU,SW
  SG_ fan_speed : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
 
-BO_ 87 BmsLv1: 8 BMSLV
+BO_ 85 BmsLv1: 8 BMSLV
  SG_ volt1 : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ volt2 : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ volt3 : 32|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ volt4 : 48|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
 
-BO_ 88 BmsLv2: 8 BMSLV
+BO_ 86 BmsLv2: 8 BMSLV
  SG_ volt5 : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ volt6 : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ temp1 : 32|16@1+ (0.001,0) [0|0] "C"  VCU,SW
@@ -96,7 +96,7 @@ BO_ 258 SuspRear: 3 SMU
  SG_ susp_rr : 0|10@1+ (1,0) [0|0] "mm"  VCU
  SG_ susp_rl : 10|10@1+ (1,0) [0|0] "mm"  VCU
 
-BO_ 288 InvVolt: 2 AMK
+BO_ 288 InvVolt: 2 VCU
  SG_ car_voltage : 0|16@1+ (1,0) [0|600] "V"  VCU,SW,BMSHV
 
 BO_ 304 Pcu: 2 VCU
@@ -159,22 +159,22 @@ BO_ 261 TempFrontR: 3 ATC
 
 
 CM_ SG_ 3221225472 fan_battery_enable "fan battery on / off";
-CM_ SG_ 85 max_volt "Maximum cell voltage in mv";
-CM_ SG_ 85 min_volt "Minimum cell voltage in mv";
-CM_ SG_ 85 avg_volt "Average cell voltage in mv";
-CM_ SG_ 85 soc "HV battery SOC in %";
-CM_ SG_ 86 max_temp "Maximum cell temperature in celsius";
-CM_ SG_ 86 min_temp "Minimum cell temperature in celsius";
-CM_ SG_ 86 avg_temp "Average cell temperature in celsius";
-CM_ SG_ 86 fan_speed "% of HV battery fan speed";
-CM_ SG_ 87 volt1 "Cell 1 voltage in mv";
-CM_ SG_ 87 volt2 "Cell 2 voltage in mv";
-CM_ SG_ 87 volt3 "Cell 3 voltage in mv";
-CM_ SG_ 87 volt4 "Cell 4 voltage in mv";
-CM_ SG_ 88 volt5 "Cell 5 voltage in mv";
-CM_ SG_ 88 volt6 "Cell 6 voltage in mv";
-CM_ SG_ 88 temp1 "Temperature sensor 1 reading in celsius";
-CM_ SG_ 88 temp2 "Temperature sensor 2 reading in celsius";
+CM_ SG_ 87 max_volt "Maximum cell voltage in mv";
+CM_ SG_ 87 min_volt "Minimum cell voltage in mv";
+CM_ SG_ 87 avg_volt "Average cell voltage in mv";
+CM_ SG_ 87 soc "HV battery SOC in %";
+CM_ SG_ 88 max_temp "Maximum cell temperature in celsius";
+CM_ SG_ 88 min_temp "Minimum cell temperature in celsius";
+CM_ SG_ 88 avg_temp "Average cell temperature in celsius";
+CM_ SG_ 88 fan_speed "% of HV battery fan speed";
+CM_ SG_ 85 volt1 "Cell 1 voltage in mv";
+CM_ SG_ 85 volt2 "Cell 2 voltage in mv";
+CM_ SG_ 85 volt3 "Cell 3 voltage in mv";
+CM_ SG_ 85 volt4 "Cell 4 voltage in mv";
+CM_ SG_ 86 volt5 "Cell 5 voltage in mv";
+CM_ SG_ 86 volt6 "Cell 6 voltage in mv";
+CM_ SG_ 86 temp1 "Temperature sensor 1 reading in celsius";
+CM_ SG_ 86 temp2 "Temperature sensor 2 reading in celsius";
 CM_ SG_ 962 current "Current seen from LEM on car side (PDB)";
 CM_ SG_ 96 acc_x "Acceleration on x axis in m/s^2";
 CM_ SG_ 96 acc_y "Acceleration on y axis in m/s^2";
