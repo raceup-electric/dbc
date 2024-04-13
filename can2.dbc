@@ -214,4 +214,10 @@ CM_ SG_ 102 max_pos_trq "Maximum Positive Torque";
 CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
 CM_ SG_ 102 torque_rep_front "Torque Repartition Front";
 CM_ SG_ 102 torque_rep_rear "Torque Repartition Rear";
+SIG_VALTYPE_ 96 acc_x : 1;
+SIG_VALTYPE_ 96 acc_y : 1;
+SIG_VALTYPE_ 97 acc_z : 1;
+SIG_VALTYPE_ 97 omega_x : 1;
+SIG_VALTYPE_ 98 omega_y : 1;
+SIG_VALTYPE_ 98 omega_z : 1;
 
