@@ -120,9 +120,10 @@ BO_ 305 Calib: 1 SW
 BO_ 306 CalibAck: 1 ATC
  SG_ position M : 0|8@1+ (1,0) [0|1] "high"  SW
 
-BO_ 100 Map: 1 SW
+BO_ 100 Map: 2 SW
  SG_ power : 0|4@1+ (1,0) [1|12] "map"  VCU
  SG_ regen : 4|4@1+ (1,0) [1|12] "map"  VCU
+ SG_ torque_rep : 8|4@1+ (1,0) [0|12] "map" Vector__XXX
 
 BO_ 84 Paddle: 1 SW
  SG_ regen : 0|8@1+ (1,0) [0|100] "%"  VCU
@@ -137,11 +138,12 @@ BO_ 99 IMUCalib: 1 SMU
 BO_ 102 CarSettings: 8 VCU
  SG_ max_regen_current : 0|8@1+ (1,0) [0|150] "A" Vector__XXX
  SG_ pwr_limit : 8|8@1+ (1,0) [0|80] "kW" Vector__XXX
- SG_ speed_lim : 16|16@1+ (1,0) [0|0] "rpm" Vector__XXX
- SG_ max_pos_trq : 32|8@1+ (1,0) [0|0] "Nm" Vector__XXX
- SG_ max_neg_trq : 40|8@1- (1,0) [0|0] "Nm" Vector__XXX
- SG_ torque_rep_front : 48|8@1+ (0.01,0) [0|0] "" Vector__XXX
- SG_ torque_rep_rear : 56|8@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ speed_lim : 16|8@1+ (1,0) [0|0] "krpm" Vector__XXX
+ SG_ max_pos_trq : 24|8@1+ (1,0) [0|0] "Nm" Vector__XXX
+ SG_ max_neg_trq : 32|8@1- (1,0) [0|0] "Nm" Vector__XXX
+ SG_ front_motor_scale : 40|8@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ rear_motor_scale : 48|8@1+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ torque_vectoring : 56|1@1+ (1,0) [0|1] "on" Vector__XXX
 
 BO_ 101 CarStatus: 2 VCU
  SG_ HV_on : 0|1@1+ (1,0) [0|0] "" Vector__XXX
@@ -204,6 +206,7 @@ CM_ SG_ 83 steering "Steering angle in milli radians";
 CM_ SG_ 305 position "Set calibration of rest value (0) or 100% (1)";
 CM_ SG_ 100 power "Map selected number";
 CM_ SG_ 100 regen "Map selected for regen braking";
+CM_ SG_ 100 torque_rep "Map selected for torque repeartition";
 CM_ SG_ 84 regen "% of regen paddle travel";
 CM_ SG_ 260 susp_fr "FR suspension travel in mm";
 CM_ SG_ 260 susp_fl "FL suspension travel in mm";
@@ -212,8 +215,9 @@ CM_ SG_ 102 pwr_limit "Maximum power limit";
 CM_ SG_ 102 speed_lim "Maximum Speed Limit";
 CM_ SG_ 102 max_pos_trq "Maximum Positive Torque";
 CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
-CM_ SG_ 102 torque_rep_front "Torque Repartition Front";
-CM_ SG_ 102 torque_rep_rear "Torque Repartition Rear";
+CM_ SG_ 102 front_motor_scale "Torque Repartition Front";
+CM_ SG_ 102 rear_motor_scale "Torque Repartition Rear";
+CM_ SG_ 102 torque_vectoring "Torque Vectoring enabled";
 SIG_VALTYPE_ 96 acc_x : 1;
 SIG_VALTYPE_ 96 acc_y : 1;
 SIG_VALTYPE_ 97 acc_z : 1;
