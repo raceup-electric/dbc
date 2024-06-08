@@ -1,4 +1,4 @@
-VERSION ""
+VERSION "HIPBNYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY/4/%%%/4/'%**4YYY///"
 
 
 NS_ : 
@@ -22,24 +22,11 @@ NS_ :
 	SIG_GROUP_
 	SIG_VALTYPE_
 	SIGTYPE_VALTYPE_
-	BO_TX_BU_
-	BA_DEF_REL_
-	BA_REL_
-	BA_DEF_DEF_REL_
-	BU_SG_REL_
-	BU_EV_REL_
-	BU_BO_REL_
-	SG_MUL_VAL_
 
 BS_:
 
 BU_: BMSHV BMSLV ATC SW VCU SMU PCU LEM AMK
 
-
-BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
- SG_ temp_mot_pre_FR : 30|10@1+ (1,0) [0|0] "c"  VCU
- SG_ temp_mot_pot_FR : 20|10@1+ (1,0) [0|0] "c"  VCU
- SG_ fan_battery_enable : 0|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 87 BmsHv1: 7 BMSHV
  SG_ max_volt : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
@@ -158,13 +145,9 @@ BO_ 261 TempFrontR: 3 ATC
  SG_ temp_mot_pot_FR : 0|10@1+ (1,0) [0|0] "C" Vector__XXX
  SG_ temp_mot_pre_FR : 10|10@1+ (1,0) [0|0] "C" Vector__XXX
 
-BO_ 99 RESERVED: 0 Vector__XXX
-
 BO_ 259 RESERVED2: 0 Vector__XXX
 
 
-
-CM_ SG_ 3221225472 fan_battery_enable "fan battery on / off";
 CM_ SG_ 87 max_volt "Maximum cell voltage in mv";
 CM_ SG_ 87 min_volt "Minimum cell voltage in mv";
 CM_ SG_ 87 avg_volt "Average cell voltage in mv";
@@ -214,6 +197,7 @@ CM_ SG_ 100 torque_rep "Map selected for torque repeartition";
 CM_ SG_ 82 regen "% of regen paddle travel";
 CM_ SG_ 260 susp_fr "FR suspension travel in mm";
 CM_ SG_ 260 susp_fl "FL suspension travel in mm";
+CM_ BO_ 99 "RESERVER FOR IMU mask - DO NOT USE";
 CM_ SG_ 102 max_regen_current "Maximum Regen Current";
 CM_ SG_ 102 pwr_limit "Maximum power limit";
 CM_ SG_ 102 speed_lim "Maximum Speed Limit";
@@ -222,7 +206,6 @@ CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
 CM_ SG_ 102 front_motor_scale "Torque Repartition Front";
 CM_ SG_ 102 rear_motor_scale "Torque Repartition Rear";
 CM_ SG_ 102 torque_vectoring "Torque Vectoring enabled";
-CM_ BO_ 99 "RESERVER FOR IMU mask - DO NOT USE";
 CM_ BO_ 259 "RESERVER FOR SMU mask - DO NOT USE";
 SIG_VALTYPE_ 96 acc_x : 1;
 SIG_VALTYPE_ 96 acc_y : 1;
@@ -230,4 +213,3 @@ SIG_VALTYPE_ 97 acc_z : 1;
 SIG_VALTYPE_ 97 omega_x : 1;
 SIG_VALTYPE_ 98 omega_y : 1;
 SIG_VALTYPE_ 98 omega_z : 1;
-
