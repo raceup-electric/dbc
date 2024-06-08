@@ -53,13 +53,13 @@ BO_ 88 BmsHv2: 7 BMSHV
  SG_ avg_temp : 32|16@1+ (1,0) [0|0] "C"  VCU,SW
  SG_ fan_speed : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
 
-BO_ 85 BmsLv1: 8 BMSLV
+BO_ 84 BmsLv1: 8 BMSLV
  SG_ volt1 : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ volt2 : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ volt3 : 32|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ volt4 : 48|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
 
-BO_ 86 BmsLv2: 8 BMSLV
+BO_ 85 BmsLv2: 8 BMSLV
  SG_ volt5 : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ volt6 : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ temp1 : 32|16@1+ (0.001,0) [0|0] "C"  VCU,SW
@@ -125,7 +125,7 @@ BO_ 100 Map: 2 SW
  SG_ regen : 4|4@1+ (1,0) [1|12] "map"  VCU
  SG_ torque_rep : 8|4@1+ (1,0) [0|12] "map" Vector__XXX
 
-BO_ 84 Paddle: 1 SW
+BO_ 82 Paddle: 1 SW
  SG_ regen : 0|8@1+ (1,0) [0|100] "%"  VCU
 
 BO_ 260 SuspFront: 3 ATC
@@ -158,6 +158,10 @@ BO_ 261 TempFrontR: 3 ATC
  SG_ temp_mot_pot_FR : 0|10@1+ (1,0) [0|0] "C" Vector__XXX
  SG_ temp_mot_pre_FR : 10|10@1+ (1,0) [0|0] "C" Vector__XXX
 
+BO_ 99 RESERVED: 0 Vector__XXX
+
+BO_ 259 RESERVED2: 0 Vector__XXX
+
 
 
 CM_ SG_ 3221225472 fan_battery_enable "fan battery on / off";
@@ -169,14 +173,14 @@ CM_ SG_ 88 max_temp "Maximum cell temperature in celsius";
 CM_ SG_ 88 min_temp "Minimum cell temperature in celsius";
 CM_ SG_ 88 avg_temp "Average cell temperature in celsius";
 CM_ SG_ 88 fan_speed "% of HV battery fan speed";
-CM_ SG_ 85 volt1 "Cell 1 voltage in mv";
-CM_ SG_ 85 volt2 "Cell 2 voltage in mv";
-CM_ SG_ 85 volt3 "Cell 3 voltage in mv";
-CM_ SG_ 85 volt4 "Cell 4 voltage in mv";
-CM_ SG_ 86 volt5 "Cell 5 voltage in mv";
-CM_ SG_ 86 volt6 "Cell 6 voltage in mv";
-CM_ SG_ 86 temp1 "Temperature sensor 1 reading in celsius";
-CM_ SG_ 86 temp2 "Temperature sensor 2 reading in celsius";
+CM_ SG_ 84 volt1 "Cell 1 voltage in mv";
+CM_ SG_ 84 volt2 "Cell 2 voltage in mv";
+CM_ SG_ 84 volt3 "Cell 3 voltage in mv";
+CM_ SG_ 84 volt4 "Cell 4 voltage in mv";
+CM_ SG_ 85 volt5 "Cell 5 voltage in mv";
+CM_ SG_ 85 volt6 "Cell 6 voltage in mv";
+CM_ SG_ 85 temp1 "Temperature sensor 1 reading in celsius";
+CM_ SG_ 85 temp2 "Temperature sensor 2 reading in celsius";
 CM_ SG_ 962 current "Current seen from LEM on car side (PDB)";
 CM_ SG_ 96 acc_x "Acceleration on x axis in m/s^2";
 CM_ SG_ 96 acc_y "Acceleration on y axis in m/s^2";
@@ -207,7 +211,7 @@ CM_ SG_ 305 position "Set calibration of rest value (0) or 100% (1)";
 CM_ SG_ 100 power "Map selected number";
 CM_ SG_ 100 regen "Map selected for regen braking";
 CM_ SG_ 100 torque_rep "Map selected for torque repeartition";
-CM_ SG_ 84 regen "% of regen paddle travel";
+CM_ SG_ 82 regen "% of regen paddle travel";
 CM_ SG_ 260 susp_fr "FR suspension travel in mm";
 CM_ SG_ 260 susp_fl "FL suspension travel in mm";
 CM_ SG_ 102 max_regen_current "Maximum Regen Current";
@@ -218,6 +222,8 @@ CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
 CM_ SG_ 102 front_motor_scale "Torque Repartition Front";
 CM_ SG_ 102 rear_motor_scale "Torque Repartition Rear";
 CM_ SG_ 102 torque_vectoring "Torque Vectoring enabled";
+CM_ BO_ 99 "RESERVER FOR IMU mask - DO NOT USE";
+CM_ BO_ 259 "RESERVER FOR SMU mask - DO NOT USE";
 SIG_VALTYPE_ 96 acc_x : 1;
 SIG_VALTYPE_ 96 acc_y : 1;
 SIG_VALTYPE_ 97 acc_z : 1;
