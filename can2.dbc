@@ -61,7 +61,7 @@ BO_ 85 BmsLv2: 8 BMSLV
  SG_ temp2 : 48|16@1+ (0.001,0) [0|0] "C"  VCU,SW
 
 BO_ 962 Lem: 8 LEM
- SG_ current : 7|32@0+ (0.001,-2147483648) [0|0] "A"  VCU,SW,BMSHV
+ SG_ current : 7|32@0+ (1,-2147483648) [0|0] "mA"  VCU,SW,BMSHV
 
 BO_ 96 Imu1: 8 SMU
  SG_ acc_x : 0|32@1- (1,0) [0|0] "m/s^2"  VCU
