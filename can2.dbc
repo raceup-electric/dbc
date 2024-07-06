@@ -103,7 +103,7 @@ BO_ 304 Pcu: 2 VCU
 BO_ 83 Driver: 4 ATC
  SG_ throttle : 0|8@1+ (1,0) [0|100] "%"  VCU,SW
  SG_ brake : 8|8@1+ (1,0) [0|100] "%"  VCU,SW
- SG_ steering : 16|12@1- (1,0) [-90|90] "deg"  VCU,SW
+ SG_ steering : 16|12@1- (0.01,0.01) [-90|90] "deg"  VCU,SW
  SG_ no_implausibility : 28|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ bre_implausibility : 29|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ pad_implausibility : 30|1@1+ (1,0) [0|0] "" Vector__XXX
@@ -225,5 +225,4 @@ SIG_VALTYPE_ 97 acc_z : 1;
 SIG_VALTYPE_ 97 omega_x : 1;
 SIG_VALTYPE_ 98 omega_y : 1;
 SIG_VALTYPE_ 98 omega_z : 1;
-SIG_VALTYPE_ 83 steering : 1;
 
