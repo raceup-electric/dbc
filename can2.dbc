@@ -57,8 +57,8 @@ BO_ 84 BmsLv1: 8 BMSLV
 BO_ 85 BmsLv2: 8 BMSLV
  SG_ volt5 : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ volt6 : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
- SG_ temp1 : 32|16@1+ (0.001,0) [0|0] ""  VCU,SW
- SG_ temp2 : 48|16@1+ (0.001,0) [0|0] ""  VCU,SW
+ SG_ temp1 : 32|16@1+ (-0.002248,76) [0|0] "C"  VCU,SW
+ SG_ temp2 : 48|16@1+ (-0.002248,76) [0|0] "C"  VCU,SW
 
 BO_ 962 Lem: 8 LEM
  SG_ current : 7|32@0+ (1,-2147483648) [0|0] "mA"  VCU,SW,BMSHV
@@ -174,8 +174,8 @@ CM_ SG_ 84 volt3 "Cell 3 voltage in mv";
 CM_ SG_ 84 volt4 "Cell 4 voltage in mv";
 CM_ SG_ 85 volt5 "Cell 5 voltage in mv";
 CM_ SG_ 85 volt6 "Cell 6 voltage in mv";
-CM_ SG_ 85 temp1 "Voltage readings by thermistors";
-CM_ SG_ 85 temp2 "Voltage reading by thermistors";
+CM_ SG_ 85 temp1 "Temp linearized";
+CM_ SG_ 85 temp2 "Temp linearized";
 CM_ SG_ 962 current "Current seen from LEM on car side (PDB)";
 CM_ SG_ 96 acc_x "Acceleration on x axis in m/s^2";
 CM_ SG_ 96 acc_y "Acceleration on y axis in m/s^2";
