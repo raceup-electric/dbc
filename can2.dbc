@@ -48,17 +48,17 @@ BO_ 88 BmsHv2: 7 BMSHV
  SG_ avg_temp : 32|16@1+ (1,0) [0|0] "C"  VCU,SW
  SG_ fan_speed : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
 
-BO_ 84 BmsLv1: 8 BMSLV
- SG_ volt1 : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
- SG_ volt2 : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
- SG_ volt3 : 32|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
- SG_ volt4 : 48|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+BO_ 84 BmsLv1: 7 BMSHV
+ SG_ max_volt : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ min_volt : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ avg_volt : 32|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ soc : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
 
-BO_ 85 BmsLv2: 8 BMSLV
- SG_ volt5 : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
- SG_ volt6 : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
- SG_ temp1 : 32|16@1+ (-0.002248,76) [0|0] "C"  VCU,SW
- SG_ temp2 : 48|16@1+ (-0.002248,76) [0|0] "C"  VCU,SW
+BO_ 85 BmsLv2: 7 BMSHV
+ SG_ max_temp : 0|16@1+ (1,0) [0|0] "C"  VCU,SW
+ SG_ min_temp : 16|16@1+ (1,0) [0|0] "C"  VCU,SW
+ SG_ avg_temp : 32|16@1+ (1,0) [0|0] "C"  VCU,SW
+ SG_ fan_speed : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
 
 BO_ 962 Lem: 8 LEM
  SG_ current : 7|32@0+ (1,-2147483648) [0|0] "mA"  VCU,SW,BMSHV
