@@ -25,7 +25,12 @@ NS_ :
 
 BS_:
 
-BU_: EMBEDDED
+BU_: EMBEDDED VCU
+
+BO_ 125 DV_Driver: 3 EMBEDDED
+ SG_ Throttle : 0|8@1+ (1,0) [0|100] "%" VCU
+ SG_ Brake : 8|8@1+ (1,0) [0|100] "%" VCU
+ SG_ Steering_angle : 16|8@1+ (1,0) [-90|+90] "%" VCU
 
 BO_ 500 DV_driving_dynamics_1: 8 EMBEDDED
  SG_ Speed_actual : 0|8@1+ (1,0) [0|255] "km/h" EMBEDDED
