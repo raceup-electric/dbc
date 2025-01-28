@@ -123,6 +123,9 @@ BO_ 100 Map: 2 SW
 BO_ 82 Paddle: 1 SW
  SG_ regen : 0|8@1+ (1,0) [0|100] "%"  VCU
 
+BO_ 103 CarMission: 1 SW
+ SG_ Mission: 0|3@1+ (1,0) [0|7] "" VCU
+
 BO_ 260 SuspFront: 3 ATC
  SG_ susp_fr : 0|12@1+ (0.1,0) [0|0] "mm"  VCU
  SG_ susp_fl : 12|12@1+ (0.1,0) [0|0] "mm"  VCU
@@ -159,6 +162,7 @@ BO_ 112 LapStart: 1 SW
  SG_ start : 0|8@1+ (1,0) [0|1] "start" Vector__XXX
 
 
+VAL_ 103 Mission 7 "dv_inspection" 6 "dv_ebs_test" 5 "dv_trackdrive" 4 "dv_autocross" 3 "dv_skidpad" 2 "dv_acceleration" 1 "manualy" 0 "none";
 
 CM_ SG_ 87 max_volt "Maximum cell voltage in mv";
 CM_ SG_ 87 min_volt "Minimum cell voltage in mv";
