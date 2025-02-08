@@ -1,9 +1,5 @@
 #!/bin/sh
 
-
-
-#!/bin/sh
-
 if [ ! -e ./can2.dbc -o ! -e ./can1.dbc -o ! -e ./can3.dbc ];
 then
     echo "usage $0"
@@ -14,7 +10,6 @@ git pull
 
 cd ./dbcc/ 
 make
-
 cd ..
 
 out_dir=./out_lib
@@ -38,3 +33,7 @@ create_lib_can_dbc() {
 create_lib_can_dbc 1
 create_lib_can_dbc 2
 create_lib_can_dbc 3
+
+create_lib_can_dbc 1_RG07
+create_lib_can_dbc 2_RG07
+create_lib_can_dbc 3_RG07
