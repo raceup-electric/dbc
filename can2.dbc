@@ -161,6 +161,13 @@ BO_ 259 RESERVED2: 0 Vector__XXX
 BO_ 112 LapStart: 1 SW
  SG_ start : 0|8@1+ (1,0) [0|1] "start" Vector__XXX
 
+BO_ 60 TanksEBS: 0 Vector__XXX
+ SG_ check : 0|1@1+ (0,0) [0|0] "" Vector__XXX
+ SG_ press_left_tank : 1|4@1+ (0.25,6) [6|10] "Bar" Vector__XXX
+ SG_ press_right_tank : 5|4@1+ (0.25,6) [6|10] "Bar" Vector__XXX
+ SG_ sanity_left_sensor : 6|1@1+ (0,0) [0|0] "" Vector__XXX
+ SG_ sanity_right_sensor : 7|1@1+ (0,0) [0|0] "" Vector__XXX
+
 
 VAL_ 103 Mission 7 "dv_inspection" 6 "dv_ebs_test" 5 "dv_trackdrive" 4 "dv_autocross" 3 "dv_skidpad" 2 "dv_acceleration" 1 "manualy" 0 "none";
 
