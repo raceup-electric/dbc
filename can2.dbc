@@ -124,7 +124,7 @@ BO_ 82 Paddle: 1 SW
  SG_ regen : 0|8@1+ (1,0) [0|100] "%"  VCU
 
 BO_ 103 CarMission: 1 SW
- SG_ Mission: 0|3@1+ (1,0) [0|7] "" VCU
+ SG_ Mission : 0|3@1+ (1,0) [0|7] "" VCU
 
 BO_ 260 SuspFront: 3 ATC
  SG_ susp_fr : 0|12@1+ (0.1,0) [0|0] "mm"  VCU
@@ -172,9 +172,6 @@ BO_ 104 CheckASB: 1 Vector__XXX
  SG_ response_status : 0|3@1+ (1,0) [0|2] "" Vector__XXX
 
 
-VAL_ 103 Mission 7 "dv_inspection" 6 "dv_ebs_test" 5 "dv_trackdrive" 4 "dv_autocross" 3 "dv_skidpad" 2 "dv_acceleration" 1 "manualy" 0 "none";
-VAL_ 104 response_status 2 "Error" 1 "Failure" 0 "Success";
-
 CM_ SG_ 87 max_volt "Maximum cell voltage in mv";
 CM_ SG_ 87 min_volt "Minimum cell voltage in mv";
 CM_ SG_ 87 avg_volt "Average cell voltage in mv";
@@ -203,8 +200,7 @@ CM_ SG_ 256 temp_motor_pre_L "";
 CM_ SG_ 256 temp_motor_pre_R "";
 CM_ SG_ 256 temp_coldplate_pre_R "";
 CM_ SG_ 257 temp_cold_pre_L "";
-CM_ SG_ 257 temp_cold_post_R "
-";
+CM_ SG_ 257 temp_cold_post_R "";
 CM_ SG_ 257 temp_cold_post_L "";
 CM_ SG_ 257 temp_mot_post_R "";
 CM_ SG_ 258 susp_rr "RR suspension travel in mm";
@@ -234,6 +230,12 @@ CM_ SG_ 102 front_motor_repartition "Torque Repartition Front";
 CM_ SG_ 102 rear_motor_repartition "Torque Repartition Rear";
 CM_ SG_ 102 torque_vectoring "Torque Vectoring enabled";
 CM_ BO_ 259 "RESERVER FOR SMU mask - DO NOT USE";
+
+
+VAL_ 103 Mission 7 "dv_inspection" 6 "dv_ebs_test" 5 "dv_trackdrive" 4 "dv_autocross" 3 "dv_skidpad" 2 "dv_acceleration" 1 "manualy" 0 "none";
+VAL_ 104 response_status 2 "Error" 1 "Failure" 0 "Success";
+
+
 SIG_VALTYPE_ 96 acc_x : 1;
 SIG_VALTYPE_ 96 acc_y : 1;
 SIG_VALTYPE_ 97 acc_z : 1;
