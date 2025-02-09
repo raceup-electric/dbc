@@ -2,7 +2,7 @@
 Repository file DBC RaceUP.
 
 ## Istruzioni per l'uso
-La repo contiene i file .dbc che descrivono sia CAN1 (inverter) che CAN2 (vettura), e la libreria [dbcc](https://github.com/howerj/dbcc) per la generazione delle librerie/file.
+La repo contiene i file .dbc che descrivono sia CAN1 (inverter) che CAN2 (vettura), e la libreria [dbcc](https://github.com/howerj/dbcc) per la generazione delle librerie/file in C, alternativamente per Rust si può usare [dbc-codegen](https://github.com/technocreatives/dbc-codegen).
 
 1. Compilare dbcc (necessario compilatore C e make)
 ```
@@ -31,3 +31,4 @@ make
 
 ## Modifica dei file
 Il formato e' testuale per cui potete modificarlo da un qualsiasi editor di testo ma consiglio l'utilizzo di Kvaser Database Editor 3 per agevolare le operazioni.
+Poichè alcuni parser sono abbastanza rigidi si è pregati di seguire l'ordine fornito dallo [standard](https://web.archive.org/web/20191118081543/http://read.pudn.com/downloads766/ebook/3041455/DBC_File_Format_Documentation.pdf)
