@@ -105,6 +105,11 @@ BO_ 304 Pcu: 6 VCU
  SG_ fanradl_speed : 33|7@1+ (1,-1) [-1|100] "%" PCU
  SG_ fanradr_speed : 40|7@1+ (1,-1) [-1|100] "%" PCU
 
+BO_ 307 PcuRf: 1 VCU
+ SG_ rf_signal : 0|1@1+ (1,0) [0|1] "on" PCU
+
+BO_ 308 PcuRfAck: 1 PCU
+ SG_ rf_signalAck : 0|1@1+ (1,0) [0|1] "on" VCU
 
 BO_ 83 Driver: 4 ATC
  SG_ throttle : 0|8@1+ (1,0) [0|100] "%"  VCU,SW
