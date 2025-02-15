@@ -94,19 +94,24 @@ BO_ 258 SuspRear: 3 SMU
 BO_ 288 InvVolt: 2 VCU
  SG_ car_voltage : 0|16@1+ (1,0) [0|600] "V"  VCU,SW,BMSHV
 
-BO_ 304 Pcu: 6 VCU
- SG_ pump_enable : 0|1@1+ (1,0) [0|1] "on" PCU
- SG_ pumpl_speed : 1|7@1+ (1,-1) [-1|100] "%" PCU
- SG_ pumpr_speed : 8|7@1+ (1,-1) [-1|100] "%" PCU
- SG_ fanbatt_enable : 16|1@1+ (1,0) [0|1] "on" PCU
- SG_ fanbattl_speed : 17|7@1+ (1,-1) [-1|100] "%" PCU
- SG_ fanbattr_speed : 24|7@1+ (1,-1) [-1|100] "%" PCU
- SG_ fanrad_enable : 32|1@1+ (1,0) [0|1] "on" PCU
- SG_ fanradl_speed : 33|7@1+ (1,-1) [-1|100] "%" PCU
- SG_ fanradr_speed : 40|7@1+ (1,-1) [-1|100] "%" PCU
-
-BO_ 307 PcuRf: 1 VCU
- SG_ rf_signal : 0|1@1+ (1,0) [0|1] "on" PCU
+BO_ 304 Pcu: 7 VCU
+ SG_ mode M : 0|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ pump_enable_left m0M : 8|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ pump_speed_left m0M : 9|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ pump_enable_right m0M : 16|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ pump_speed_right m0M : 17|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ fanrad_enable_left m0M : 24|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ fanrad_speed_left m0M : 25|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ fanrad_enable_right m0M : 32|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ fanrad_speed_right m0M : 33|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ fanbatt_enable_left m0M : 40|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ fanbatt_speed_left m0M : 41|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ fanbatt_enable_right m0M : 48|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ fanbatt_speed_right m0M : 49|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ rf m1M : 2|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ enable_dv m2M : 2|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ enable_embedded m2M : 3|1@1+ (1,0) [0|1] "on" Vector__XXX
+ 
 
 BO_ 308 PcuRfAck: 1 PCU
  SG_ rf_signalAck : 0|1@1+ (1,0) [0|1] "on" VCU
@@ -226,10 +231,6 @@ CM_ SG_ 257 temp_mot_post_R "";
 CM_ SG_ 258 susp_rr "RR suspension travel in mm";
 CM_ SG_ 258 susp_rl "RL suspension travel in mm";
 CM_ SG_ 288 car_voltage "Voltage seen from car side (inverter) in volts";
-CM_ SG_ 304 fan_enable "Water radiator fan enable";
-CM_ SG_ 304 fan_speed "Water radiator fan speed in %";
-CM_ SG_ 304 pump_enable "Water pump enable";
-CM_ SG_ 304 pump_speed "Water pump speed";
 CM_ SG_ 83 throttle "% of throttle";
 CM_ SG_ 83 brake "% of brake pedal";
 CM_ SG_ 83 steering "Steering angle in milli radians";
@@ -264,3 +265,20 @@ SIG_VALTYPE_ 98 omega_y : 1;
 SIG_VALTYPE_ 98 omega_z : 1;
 
 
+
+
+SG_MUL_VAL_ 304 rf mode 1-1;
+SG_MUL_VAL_ 304 enable_dv mode 2-2;
+SG_MUL_VAL_ 304 enable_embedded mode 2-2;
+SG_MUL_VAL_ 304 pump_enable_left mode 0-0;
+SG_MUL_VAL_ 304 pump_speed_left mode 0-0;
+SG_MUL_VAL_ 304 pump_enable_right mode 0-0;
+SG_MUL_VAL_ 304 pump_speed_right mode 0-0;
+SG_MUL_VAL_ 304 fanrad_enable_left mode 0-0;
+SG_MUL_VAL_ 304 fanrad_speed_left mode 0-0;
+SG_MUL_VAL_ 304 fanrad_enable_right mode 0-0;
+SG_MUL_VAL_ 304 fanrad_speed_right mode 0-0;
+SG_MUL_VAL_ 304 fanbatt_enable_left mode 0-0;
+SG_MUL_VAL_ 304 fanbatt_speed_left mode 0-0;
+SG_MUL_VAL_ 304 fanbatt_enable_right mode 0-0;
+SG_MUL_VAL_ 304 fanbatt_speed_right mode 0-0;
