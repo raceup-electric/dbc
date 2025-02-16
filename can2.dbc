@@ -164,18 +164,6 @@ BO_ 261 TempFrontR: 3 ATC
 BO_ 288 InvVolt: 2 VCU
  SG_ car_voltage : 0|16@1+ (1,0) [0|600] "V"  VCU,SW,BMSHV
 
-BO_ 305 Calib: 1 SW
- SG_ position M : 0|8@1+ (1,0) [0|1] "high" ATC
-
-BO_ 306 CalibAck: 1 ATC
- SG_ position M : 0|8@1+ (1,0) [0|1] "high" SW
-
-BO_ 308 PcuRfAck: 1 PCU
- SG_ rf_signalAck : 0|1@1+ (1,0) [0|1] "on" VCU
-
-BO_ 962 Lem: 8 LEM
- SG_ current : 7|32@0+ (1,-2147483648) [0|0] "mA" VCU,SW,BMSHV
-
 BO_ 304 Pcu: 7 VCU
  SG_ mode M : 0|2@1+ (1,0) [0|2] "" Vector__XXX
  SG_ pump_enable_left m0M : 8|1@1+ (1,0) [0|1] "on" Vector__XXX
@@ -193,21 +181,19 @@ BO_ 304 Pcu: 7 VCU
  SG_ rf m1M : 2|1@1+ (1,0) [0|1] "on" Vector__XXX
  SG_ enable_dv m2M : 2|1@1+ (1,0) [0|1] "on" Vector__XXX
  SG_ enable_embedded m2M : 3|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ pump_enable_left m0M : 8|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ pump_speed_left m0M : 9|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ pump_enable_right m0M : 16|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ pump_speed_right m0M : 17|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ fanrad_enable_left m0M : 24|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ fanrad_speed_left m0M : 25|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ fanrad_enable_right m0M : 32|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ fanrad_speed_right m0M : 33|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ fanbatt_enable_left m0M : 40|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ fanbatt_speed_left m0M : 41|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ fanbatt_enable_right m0M : 48|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ fanbatt_speed_right m0M : 49|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ rf m1M : 2|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ enable_dv m2M : 2|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ enable_embedded m2M : 3|1@1+ (1,0) [0|1] "on" Vector__XXX
+
+BO_ 305 Calib: 1 SW
+ SG_ position M : 0|8@1+ (1,0) [0|1] "high" ATC
+
+BO_ 306 CalibAck: 1 ATC
+ SG_ position M : 0|8@1+ (1,0) [0|1] "high" SW
+
+BO_ 308 PcuRfAck: 1 PCU
+ SG_ rf_signalAck : 0|1@1+ (1,0) [0|1] "on" VCU
+
+BO_ 962 Lem: 8 LEM
+ SG_ current : 7|32@0+ (1,-2147483648) [0|0] "mA" VCU,SW,BMSHV
+
 
 CM_ SG_ 87 max_volt "Maximum cell voltage in mv";
 CM_ SG_ 87 min_volt "Minimum cell voltage in mv";

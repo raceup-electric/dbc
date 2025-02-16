@@ -11,8 +11,10 @@ then
     exit -1
 fi
 git pull --recurse-submodules=yes
+git submodule update --init --recursive --rebase --remote
 
 cd ./dbcc/ 
+make clean
 make
 
 cd ..
