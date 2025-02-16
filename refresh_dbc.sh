@@ -10,7 +10,7 @@ then
     echo "run the scrip inside of ControlUnitLogicOperator/lib/board_dbc"
     exit -1
 fi
-git pull
+git pull --recurse-submodules=yes
 
 cd ./dbcc/ 
 make
