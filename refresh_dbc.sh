@@ -32,6 +32,8 @@ create_lib_can_dbc() {
     sed -i "s/print_message/print_message_can${1}/" ./can${1}.h
     sed -i "s/print_message/print_message_can${1}/" ./can${1}.c
 
+    sed -i "s/message_dlc/message_dlc_can${1}/" ./can${1}.c
+
     mkdir $out_dir/can${1}
     mv can${1}.h $out_dir/can${1}
     mv can${1}.c $out_dir/can${1}
