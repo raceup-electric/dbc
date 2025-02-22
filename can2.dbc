@@ -135,6 +135,10 @@ BO_ 104 CheckASB: 1 Vector__XXX
 BO_ 112 LapStart: 1 SW
  SG_ start : 0|8@1+ (1,0) [0|1] "start" Vector__XXX
 
+BO_ 113 CarMissionStatus: 1 SW
+ SG_ Mission : 0|3@1+ (1,0) [0|7] "" VCU
+ SG_ Mission : 3|2@1+ (1,0) [0|2] "" VCU
+
 BO_ 256 Temp1: 8 SMU
 SG_ temp_motor_post_L : 0|16@1+ (1,0) [0|0] "C"  VCU
  SG_ temp_motor_pre_L : 16|16@1+ (1,0) [0|0] "C"  VCU
@@ -252,6 +256,7 @@ CM_ BO_ 259 "RESERVER FOR SMU mask - DO NOT USE";
 
 
 VAL_ 103 Mission 7 "dv_inspection" 6 "dv_ebs_test" 5 "dv_trackdrive" 4 "dv_autocross" 3 "dv_skidpad" 2 "dv_acceleration" 1 "manualy" 0 "none";
+VAL_ 113 CarMissionStatus 2 "Mission_finished" 1 "Mission_running" 0 "Mission_not_running"
 VAL_ 104 response_status 2 "Error" 1 "Failure" 0 "Success";
 
 
