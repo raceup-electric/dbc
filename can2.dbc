@@ -42,6 +42,9 @@ BO_ 60 TanksEBS: 2 Vector__XXX
  SG_ sanity_left_sensor : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ sanity_right_sensor : 12|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 71 CarMission: 1 SW
+ SG_ Mission : 0|3@1+ (1,0) [0|7] "" VCU
+
 BO_ 81 PcuFault: 1 PCU
  SG_ fault_12v : 0|1@1+ (1,0) [0|1] "on" Vector__XXX
  SG_ fault_dv : 1|1@1+ (1,0) [0|1] "on" Vector__XXX
@@ -125,9 +128,6 @@ BO_ 102 CarSettings: 8 VCU
  SG_ front_motor_repartition : 40|8@1+ (1,0) [0|0] "%" Vector__XXX
  SG_ rear_motor_repartition : 48|8@1+ (1,0) [0|0] "%" Vector__XXX
  SG_ torque_vectoring : 56|1@1+ (1,0) [0|1] "on" Vector__XXX
-
-BO_ 103 CarMission: 1 SW
- SG_ Mission : 0|3@1+ (1,0) [0|7] "" VCU
 
 BO_ 104 CheckASB: 1 Vector__XXX
  SG_ response_status : 0|3@1+ (1,0) [0|2] "" Vector__XXX
