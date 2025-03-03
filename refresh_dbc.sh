@@ -43,3 +43,4 @@ create_lib_can_dbc() {
 create_lib_can_dbc 1
 create_lib_can_dbc 2
 create_lib_can_dbc 3
+create_lib_can_dbc sbg
