@@ -193,6 +193,10 @@ BO_ 305 Calib: 1 SW
 BO_ 306 CalibAck: 1 ATC
  SG_ position M : 0|8@1+ (1,0) [0|1] "high" SW
 
+BO_ 307 PcuSwControl: 1 SW
+ SG_ pump: 0|1@1+ (1,0) [0|1] "" VCU
+ SG_ fan: 1|1@1+ (1,0) [0|1] "" VCU
+
 BO_ 308 PcuRfAck: 1 PCU
  SG_ rf_signalAck : 0|1@1+ (1,0) [0|1] "on" VCU
 
@@ -259,6 +263,9 @@ CM_ BO_ 259 "RESERVER FOR SMU mask - DO NOT USE";
 VAL_ 71 Mission 7 "dv_inspection" 6 "dv_ebs_test" 5 "dv_trackdrive" 4 "dv_autocross" 3 "dv_skidpad" 2 "dv_acceleration" 1 "manualy" 0 "none";
 VAL_ 113 MissionStatus 2 "Mission_finished" 1 "Mission_running" 0 "Mission_not_running"
 VAL_ 104 response_status 2 "Error" 1 "Failure" 0 "Success";
+VAL_ 307 pump 1 "On" 0 "Off";
+VAL_ 307 fan 1 "On" 0 "Off";
+
 
 
 SIG_VALTYPE_ 96 acc_x : 1;
