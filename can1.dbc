@@ -36,7 +36,7 @@ BS_:
 BU_: VCU AMK
 
 
-BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 1 Vector__XXX
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ Status : 8|8@1+ (1,0) [0|0] ""  VCU
 
 BO_ 643 InverterFL1: 8 AMK
@@ -60,12 +60,7 @@ BO_ 645 InverterFL2: 8 AMK
  SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
 
 BO_ 388 VCUInvFL: 8 VCU
- SG_ AMK_bReserved : 0|8@1+ (1,0) [0|0] ""  AMK
- SG_ AMK_bInverterOn : 9|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bDcOn : 10|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bEnable : 11|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bErrorReset : 12|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bReservedEnd : 13|4@1+ (1,0) [0|0] "" AMK
+ SG_ ControlWord : 0|16@1+ (1,0) [0|0] ""  AMK
  SG_ TargetVel : 16|16@1- (1,0) [0|0] "rpm"  AMK
  SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
  SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
@@ -91,12 +86,7 @@ BO_ 646 InverterFR2: 8 AMK
  SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
 
 BO_ 389 VCUInvFR: 8 VCU
- SG_ AMK_bReserved : 0|8@1+ (1,0) [0|0] ""  AMK
- SG_ AMK_bInverterOn : 9|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bDcOn : 10|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bEnable : 11|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bErrorReset : 12|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bReservedEnd : 13|4@1+ (1,0) [0|0] "" AMK
+ SG_ ControlWord : 0|16@1+ (1,0) [0|0] ""  AMK
  SG_ TargetVel : 16|16@1- (1,0) [0|0] "rpm"  AMK
  SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
  SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
@@ -122,12 +112,7 @@ BO_ 649 InverterRL2: 8 AMK
  SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
 
 BO_ 392 VCUInvRL: 8 VCU
- SG_ AMK_bReserved : 0|8@1+ (1,0) [0|0] ""  AMK
- SG_ AMK_bInverterOn : 9|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bDcOn : 10|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bEnable : 11|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bErrorReset : 12|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bReservedEnd : 13|4@1+ (1,0) [0|0] "" AMK
+ SG_ ControlWord : 0|16@1+ (1,0) [0|0] ""  AMK
  SG_ TargetVel : 16|16@1- (1,0) [0|0] "rpm"  AMK
  SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
  SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
@@ -153,12 +138,7 @@ BO_ 650 InverterRR2: 8 AMK
  SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
 
 BO_ 393 VCUInvRR: 8 VCU
- SG_ AMK_bReserved : 0|8@1+ (1,0) [0|0] ""  AMK
- SG_ AMK_bInverterOn : 9|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bDcOn : 10|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bEnable : 11|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bErrorReset : 12|1@1+ (1,0) [0|0] "" AMK
- SG_ AMK_bReservedEnd : 13|4@1+ (1,0) [0|0] "" AMK
+ SG_ ControlWord : 0|16@1+ (1,0) [0|0] ""  AMK
  SG_ TargetVel : 16|16@1- (1,0) [0|0] "rpm"  AMK
  SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
  SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
