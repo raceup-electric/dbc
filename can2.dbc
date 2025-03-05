@@ -33,116 +33,196 @@ NS_ :
 
 BS_:
 
-BU_: VCU AMK
+BU_: BMSHV BMSLV ATC SW VCU SMU PCU LEM AMK
 
 
-BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
- SG_ Status : 8|8@1+ (1,0) [0|0] ""  VCU
+BO_ 87 BmsHv1: 7 BMSHV
+ SG_ max_volt : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ min_volt : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ avg_volt : 32|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ soc : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
 
-BO_ 643 InverterFL1: 8 AMK
- SG_ Reserved : 0|8@1+ (1,0) [0|0] ""  VCU
- SG_ ActualVelocity : 16|16@1- (1,0) [0|0] "rpm"  VCU
- SG_ MagCurr : 32|16@1- (1,0) [0|0] ""  VCU
- SG_ Voltage : 48|16@1- (1,0) [0|0] "V"  VCU
- SG_ SystemReady : 8|1@1+ (1,0) [0|0] ""  VCU
- SG_ Error : 9|1@1+ (1,0) [0|0] ""  VCU
- SG_ HVOnAck : 11|1@1+ (1,0) [0|0] ""  VCU
- SG_ HVOn : 12|1@1+ (1,0) [0|0] ""  VCU
- SG_ InverterOnAck : 13|1@1+ (1,0) [0|0] ""  VCU
- SG_ InverterOn : 14|1@1+ (1,0) [0|0] ""  VCU
- SG_ Warning : 10|1@1+ (1,0) [0|0] ""  VCU
- SG_ Derating : 15|1@1+ (1,0) [0|0] ""  VCU
+BO_ 88 BmsHv2: 7 BMSHV
+ SG_ max_temp : 0|16@1+ (1,0) [0|0] "C"  VCU,SW
+ SG_ min_temp : 16|16@1+ (1,0) [0|0] "C"  VCU,SW
+ SG_ avg_temp : 32|16@1+ (1,0) [0|0] "C"  VCU,SW
+ SG_ fan_speed : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
 
-BO_ 645 InverterFL2: 8 AMK
- SG_ TempMotor : 0|16@1- (0.1,0) [0|0] "C"  VCU
- SG_ TempInv : 16|16@1- (0.1,0) [0|0] "C"  VCU
- SG_ ErrorInfo : 32|16@1+ (1,0) [0|0] ""  VCU
- SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
+BO_ 84 BmsLv1: 8 BMSLV
+ SG_ volt1 : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ volt2 : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ volt3 : 32|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ volt4 : 48|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
 
-BO_ 388 VCUInvFL: 8 VCU
- SG_ ControlWord : 0|16@1+ (1,0) [0|0] ""  AMK
- SG_ TargetVel : 16|16@1- (1,0) [0|0] "rpm"  AMK
- SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
- SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
+BO_ 85 BmsLv2: 8 BMSLV
+ SG_ volt5 : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ volt6 : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
+ SG_ temp1 : 32|16@1+ (-0.002248,76) [0|0] "C"  VCU,SW
+ SG_ temp2 : 48|16@1+ (-0.002248,76) [0|0] "C"  VCU,SW
 
-BO_ 644 InverterFR1: 8 AMK
- SG_ Reserved : 0|8@1+ (1,0) [0|0] ""  VCU
- SG_ ActualVelocity : 16|16@1- (1,0) [0|0] "rpm"  VCU
- SG_ MagCurr : 32|16@1- (1,0) [0|0] ""  VCU
- SG_ Voltage : 48|16@1- (1,0) [0|0] "V"  VCU
- SG_ SystemReady : 8|1@1+ (1,0) [0|0] ""  VCU
- SG_ Error : 9|1@1+ (1,0) [0|0] ""  VCU
- SG_ HVOnAck : 11|1@1+ (1,0) [0|0] ""  VCU
- SG_ HVOn : 12|1@1+ (1,0) [0|0] ""  VCU
- SG_ InverterOnAck : 13|1@1+ (1,0) [0|0] ""  VCU
- SG_ InverterOn : 14|1@1+ (1,0) [0|0] ""  VCU
- SG_ Warning : 10|1@1+ (1,0) [0|0] ""  VCU
- SG_ Derating : 15|1@1+ (1,0) [0|0] ""  VCU
+BO_ 962 Lem: 8 LEM
+ SG_ current : 7|32@0+ (1,-2147483648) [0|0] "mA"  VCU,SW,BMSHV
 
-BO_ 646 InverterFR2: 8 AMK
- SG_ TempMotor : 0|16@1- (0.1,0) [0|0] "C"  VCU
- SG_ TempInv : 16|16@1- (0.1,0) [0|0] "C"  VCU
- SG_ ErrorInfo : 32|16@1+ (1,0) [0|0] ""  VCU
- SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
+BO_ 96 Imu1: 8 SMU
+ SG_ acc_x : 0|32@1- (1,0) [0|0] "m/s^2"  VCU
+ SG_ acc_y : 32|32@1- (1,0) [0|0] "m/s^2"  VCU
 
-BO_ 389 VCUInvFR: 8 VCU
- SG_ ControlWord : 0|16@1+ (1,0) [0|0] ""  AMK
- SG_ TargetVel : 16|16@1- (1,0) [0|0] "rpm"  AMK
- SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
- SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
+BO_ 97 Imu2: 8 SMU
+ SG_ acc_z : 0|32@1- (1,0) [0|0] "m/s^2"  VCU
+ SG_ omega_x : 32|32@1- (1,0) [0|0] "rad/s"  VCU
 
-BO_ 647 InverterRL1: 8 AMK
- SG_ Reserved : 0|8@1+ (1,0) [0|0] ""  VCU
- SG_ ActualVelocity : 16|16@1- (1,0) [0|0] "rpm"  VCU
- SG_ MagCurr : 32|16@1- (1,0) [0|0] ""  VCU
- SG_ Voltage : 48|16@1- (1,0) [0|0] "V"  VCU
- SG_ SystemReady : 8|1@1+ (1,0) [0|0] ""  VCU
- SG_ Error : 9|1@1+ (1,0) [0|0] ""  VCU
- SG_ HVOnAck : 11|1@1+ (1,0) [0|0] ""  VCU
- SG_ HVOn : 12|1@1+ (1,0) [0|0] ""  VCU
- SG_ InverterOnAck : 13|1@1+ (1,0) [0|0] ""  VCU
- SG_ InverterOn : 14|1@1+ (1,0) [0|0] ""  VCU
- SG_ Warning : 10|1@1+ (1,0) [0|0] ""  VCU
- SG_ Derating : 15|1@1+ (1,0) [0|0] ""  VCU
+BO_ 98 Imu3: 8 SMU
+ SG_ omega_y : 0|32@1- (1,0) [0|0] "rad/s"  VCU
+ SG_ omega_z : 32|32@1- (1,0) [0|0] "rad/s"  VCU
 
-BO_ 649 InverterRL2: 8 AMK
- SG_ TempMotor : 0|16@1- (0.1,0) [0|0] "C"  VCU
- SG_ TempInv : 16|16@1- (0.1,0) [0|0] "C"  VCU
- SG_ ErrorInfo : 32|16@1+ (1,0) [0|0] ""  VCU
- SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
+BO_ 256 Temp1: 8 SMU
+ SG_ temp_motor_post_L : 0|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_motor_pre_L : 16|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_motor_pre_R : 32|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_coldplate_pre_R : 48|16@1+ (1,0) [0|0] "C"  VCU
 
-BO_ 392 VCUInvRL: 8 VCU
- SG_ ControlWord : 0|16@1+ (1,0) [0|0] ""  AMK
- SG_ TargetVel : 16|16@1- (1,0) [0|0] "rpm"  AMK
- SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
- SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
+BO_ 257 Temp2: 8 SMU
+ SG_ temp_cold_pre_L : 0|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_cold_post_R : 16|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_cold_post_L : 32|16@1+ (1,0) [0|0] "C"  VCU
+ SG_ temp_mot_post_R : 48|16@1+ (1,0) [0|0] "C"  VCU
 
-BO_ 648 InverterRR1: 8 AMK
- SG_ Reserved : 0|8@1+ (1,0) [0|0] ""  VCU
- SG_ ActualVelocity : 16|16@1- (1,0) [0|0] "rpm"  VCU
- SG_ MagCurr : 32|16@1- (1,0) [0|0] ""  VCU
- SG_ Voltage : 48|16@1- (1,0) [0|0] "V"  VCU
- SG_ SystemReady : 8|1@1+ (1,0) [0|0] ""  VCU
- SG_ Error : 9|1@1+ (1,0) [0|0] ""  VCU
- SG_ HVOnAck : 11|1@1+ (1,0) [0|0] ""  VCU
- SG_ HVOn : 12|1@1+ (1,0) [0|0] ""  VCU
- SG_ InverterOnAck : 13|1@1+ (1,0) [0|0] ""  VCU
- SG_ InverterOn : 14|1@1+ (1,0) [0|0] ""  VCU
- SG_ Warning : 10|1@1+ (1,0) [0|0] ""  VCU
- SG_ Derating : 15|1@1+ (1,0) [0|0] ""  VCU
+BO_ 258 SuspRear: 3 SMU
+ SG_ susp_rr : 0|12@1+ (0.1,0) [0|0] "mm"  VCU
+ SG_ susp_rl : 12|12@1+ (0.1,0) [0|0] "mm"  VCU
 
-BO_ 650 InverterRR2: 8 AMK
- SG_ TempMotor : 0|16@1- (0.1,0) [0|0] "C"  VCU
- SG_ TempInv : 16|16@1- (0.1,0) [0|0] "C"  VCU
- SG_ ErrorInfo : 32|16@1+ (1,0) [0|0] ""  VCU
- SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
+BO_ 288 InvVolt: 2 VCU
+ SG_ car_voltage : 0|16@1+ (1,0) [0|600] "V"  VCU,SW,BMSHV
 
-BO_ 393 VCUInvRR: 8 VCU
- SG_ ControlWord : 0|16@1+ (1,0) [0|0] ""  AMK
- SG_ TargetVel : 16|16@1- (1,0) [0|0] "rpm"  AMK
- SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
- SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
+BO_ 304 Pcu: 2 VCU
+ SG_ fan_enable : 0|1@1+ (1,0) [0|0] "on"  PCU
+ SG_ fan_speed : 1|7@1+ (1,0) [0|0] "%"  PCU
+ SG_ pump_enable : 8|1@1+ (1,0) [0|0] "on"  PCU
+ SG_ pump_speed : 9|7@1+ (1,0) [0|0] "%"  PCU
+
+BO_ 83 Driver: 4 ATC
+ SG_ throttle : 0|8@1+ (1,0) [0|100] "%"  VCU,SW
+ SG_ brake : 8|8@1+ (1,0) [0|100] "%"  VCU,SW
+ SG_ steering : 16|12@1- (1,0) [-120|120] "deg"  VCU,SW
+ SG_ no_implausibility : 28|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bre_implausibility : 29|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pad_implausibility : 30|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pot_implausibility : 31|1@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 305 Calib: 1 SW
+ SG_ position M : 0|8@1+ (1,0) [0|1] "high"  ATC
+
+BO_ 306 CalibAck: 1 ATC
+ SG_ position M : 0|8@1+ (1,0) [0|1] "high"  SW
+
+BO_ 100 Map: 2 SW
+ SG_ power : 0|4@1+ (1,0) [1|12] "map"  VCU
+ SG_ regen : 4|4@1+ (1,0) [1|12] "map"  VCU
+ SG_ torque_rep : 8|4@1+ (1,0) [0|12] "map" Vector__XXX
+
+BO_ 82 Paddle: 1 SW
+ SG_ regen : 0|8@1+ (1,0) [0|100] "%"  VCU
+
+BO_ 260 SuspFront: 3 ATC
+ SG_ susp_fr : 0|12@1+ (0.1,0) [0|0] "mm"  VCU
+ SG_ susp_fl : 12|12@1+ (0.1,0) [0|0] "mm"  VCU
+
+BO_ 99 IMUCalib: 1 SMU
+ SG_ start_imu_calibration : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 102 CarSettings: 8 VCU
+ SG_ max_regen_current : 0|8@1+ (1,0) [0|150] "A" Vector__XXX
+ SG_ pwr_limit : 8|8@1+ (1,0) [0|80] "kW" Vector__XXX
+ SG_ speed_lim : 16|8@1+ (1,0) [0|0] "krpm" Vector__XXX
+ SG_ max_pos_trq : 24|8@1+ (1,0) [0|0] "Nm" Vector__XXX
+ SG_ max_neg_trq : 32|8@1- (1,0) [0|0] "Nm" Vector__XXX
+ SG_ front_motor_repartition : 40|8@1+ (1,0) [0|0] "%" Vector__XXX
+ SG_ rear_motor_repartition : 48|8@1+ (1,0) [0|0] "%" Vector__XXX
+ SG_ torque_vectoring : 56|1@1+ (1,0) [0|1] "on" Vector__XXX
+
+BO_ 101 CarStatus: 2 VCU
+ SG_ HV : 0|1@1+ (1,0) [0|0] "on" Vector__XXX
+ SG_ R2D : 1|1@1+ (1,0) [0|0] "on" Vector__XXX
+ SG_ AIR1 : 3|1@1+ (1,0) [0|0] "closed" Vector__XXX
+ SG_ RF : 2|1@1+ (1,0) [0|0] "enabled" Vector__XXX
+ SG_ AIR2 : 4|1@1+ (1,0) [0|0] "closed" Vector__XXX
+ SG_ precharge : 5|1@1+ (1,0) [0|0] "done" Vector__XXX
+ SG_ speed : 8|8@1+ (1,0) [0|0] "km/h" Vector__XXX
+
+BO_ 261 TempFrontR: 3 ATC
+ SG_ temp_mot_pot_FR : 0|10@1+ (1,0) [0|0] "C" Vector__XXX
+ SG_ temp_mot_pre_FR : 10|10@1+ (1,0) [0|0] "C" Vector__XXX
+
+BO_ 259 RESERVED2: 0 Vector__XXX
+
+BO_ 112 LapStart: 1 SW
+ SG_ start : 0|8@1+ (1,0) [0|1] "start" Vector__XXX
 
 
 
+CM_ SG_ 87 max_volt "Maximum cell voltage in mv";
+CM_ SG_ 87 min_volt "Minimum cell voltage in mv";
+CM_ SG_ 87 avg_volt "Average cell voltage in mv";
+CM_ SG_ 87 soc "HV battery SOC in %";
+CM_ SG_ 88 max_temp "Maximum cell temperature in celsius";
+CM_ SG_ 88 min_temp "Minimum cell temperature in celsius";
+CM_ SG_ 88 avg_temp "Average cell temperature in celsius";
+CM_ SG_ 88 fan_speed "% of HV battery fan speed";
+CM_ SG_ 84 volt1 "Cell 1 voltage in mv";
+CM_ SG_ 84 volt2 "Cell 2 voltage in mv";
+CM_ SG_ 84 volt3 "Cell 3 voltage in mv";
+CM_ SG_ 84 volt4 "Cell 4 voltage in mv";
+CM_ SG_ 85 volt5 "Cell 5 voltage in mv";
+CM_ SG_ 85 volt6 "Cell 6 voltage in mv";
+CM_ SG_ 85 temp1 "Temp linearized";
+CM_ SG_ 85 temp2 "Temp linearized";
+CM_ SG_ 962 current "Current seen from LEM on car side (PDB)";
+CM_ SG_ 96 acc_x "Acceleration on x axis in m/s^2";
+CM_ SG_ 96 acc_y "Acceleration on y axis in m/s^2";
+CM_ SG_ 97 acc_z "Acceleration on z axis in m/s^2";
+CM_ SG_ 97 omega_x "Angular speed on x axis in rad/s";
+CM_ SG_ 98 omega_y "Angular speed on x axis in rad/s";
+CM_ SG_ 98 omega_z "Angular speed on x axis in rad/s";
+CM_ SG_ 256 temp_motor_post_L "";
+CM_ SG_ 256 temp_motor_pre_L "";
+CM_ SG_ 256 temp_motor_pre_R "";
+CM_ SG_ 256 temp_coldplate_pre_R "";
+CM_ SG_ 257 temp_cold_pre_L "";
+CM_ SG_ 257 temp_cold_post_R "
+";
+CM_ SG_ 257 temp_cold_post_L "";
+CM_ SG_ 257 temp_mot_post_R "";
+CM_ SG_ 258 susp_rr "RR suspension travel in mm";
+CM_ SG_ 258 susp_rl "RL suspension travel in mm";
+CM_ SG_ 288 car_voltage "Voltage seen from car side (inverter) in volts";
+CM_ SG_ 304 fan_enable "Water radiator fan enable";
+CM_ SG_ 304 fan_speed "Water radiator fan speed in %";
+CM_ SG_ 304 pump_enable "Water pump enable";
+CM_ SG_ 304 pump_speed "Water pump speed";
+CM_ SG_ 83 throttle "% of throttle";
+CM_ SG_ 83 brake "% of brake pedal";
+CM_ SG_ 83 steering "Steering angle in milli radians";
+CM_ SG_ 305 position "Set calibration of rest value (0) or 100% (1)";
+CM_ SG_ 100 power "Map selected number";
+CM_ SG_ 100 regen "Map selected for regen braking";
+CM_ SG_ 100 torque_rep "Map selected for torque repeartition";
+CM_ SG_ 82 regen "% of regen paddle travel";
+CM_ SG_ 260 susp_fr "FR suspension travel in mm";
+CM_ SG_ 260 susp_fl "FL suspension travel in mm";
+CM_ BO_ 99 "RESERVER FOR IMU mask - DO NOT USE";
+CM_ SG_ 102 max_regen_current "Maximum Regen Current";
+CM_ SG_ 102 pwr_limit "Maximum power limit";
+CM_ SG_ 102 speed_lim "Maximum Speed Limit";
+CM_ SG_ 102 max_pos_trq "Maximum Positive Torque";
+CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
+CM_ SG_ 102 front_motor_repartition "Torque Repartition Front";
+CM_ SG_ 102 rear_motor_repartition "Torque Repartition Rear";
+CM_ SG_ 102 torque_vectoring "Torque Vectoring enabled";
+CM_ BO_ 259 "RESERVER FOR SMU mask - DO NOT USE";
+SIG_VALTYPE_ 96 acc_x : 1;
+SIG_VALTYPE_ 96 acc_y : 1;
+SIG_VALTYPE_ 97 acc_z : 1;
+SIG_VALTYPE_ 97 omega_x : 1;
+SIG_VALTYPE_ 98 omega_y : 1;
+SIG_VALTYPE_ 98 omega_z : 1;
 
