@@ -139,6 +139,7 @@ BO_ 112 LapStart: 1 SW
 BO_ 113 CarMissionStatus: 1 VCU
  SG_ Mission : 0|3@1+ (1,0) [0|7] "" SW
  SG_ MissionStatus : 3|2@1+ (1,0) [0|2] "" SW
+ SG_ AsStatus: 5|3@1+ (1,0) [0|7] "" SW
 
 BO_ 256 Temp1: 8 SMU
 SG_ temp_motor_post_L : 0|16@1+ (1,0) [0|0] "C"  VCU
@@ -265,6 +266,7 @@ VAL_ 113 MissionStatus 2 "Mission_finished" 1 "Mission_running" 0 "Mission_not_r
 VAL_ 104 response_status 2 "Error" 1 "Failure" 0 "Success";
 VAL_ 307 pump 1 "On" 0 "Off";
 VAL_ 307 fan 1 "On" 0 "Off";
+VAL_ 113 AsStatus 5 "finish" 4 "emergency_brake" 3 "driving" 2 "ready" 1 "off";
 
 
 
