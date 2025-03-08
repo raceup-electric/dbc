@@ -261,7 +261,7 @@ CM_ BO_ 259 "RESERVER FOR SMU mask - DO NOT USE";
 
 
 VAL_ 71 Mission 7 "dv_inspection" 6 "dv_ebs_test" 5 "dv_trackdrive" 4 "dv_autocross" 3 "dv_skidpad" 2 "dv_acceleration" 1 "manualy" 0 "none";
-VAL_ 113 MissionStatus 2 "Mission_finished" 1 "Mission_running" 0 "Mission_not_running"
+VAL_ 113 MissionStatus 2 "Mission_finished" 1 "Mission_running" 0 "Mission_not_running";
 VAL_ 104 response_status 2 "Error" 1 "Failure" 0 "Success";
 VAL_ 307 pump 1 "On" 0 "Off";
 VAL_ 307 fan 1 "On" 0 "Off";
