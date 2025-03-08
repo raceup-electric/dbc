@@ -195,8 +195,8 @@ BO_ 306 CalibAck: 1 ATC
  SG_ position M : 0|8@1+ (1,0) [0|1] "high" SW
 
 BO_ 307 PcuSwControl: 1 SW
- SG_ pump: 0|1@1+ (1,0) [0|1] "" VCU
- SG_ fan: 1|1@1+ (1,0) [0|1] "" VCU
+ SG_ pump : 0|1@1+ (1,0) [0|1] "" VCU
+ SG_ fan : 1|1@1+ (1,0) [0|1] "" VCU
 
 BO_ 308 PcuRfAck: 1 PCU
  SG_ rf_signalAck : 0|1@1+ (1,0) [0|1] "on" VCU
