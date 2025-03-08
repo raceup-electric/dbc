@@ -68,8 +68,8 @@ CM_ SG_ 502 EBS_state "EBS state unavailable=1, armed=2, activated=3.";
 CM_ SG_ 502 AMI_state "AMI state acceleration=1, skidpad=2, trackdrive=3, braketest=4, inspection=5, autocross=6.";
 CM_ SG_ 502 Service_brake_state "Disengaged=1, Engaged=2, Available=3.";
 
-VAL_ 127 CarStatus 2 "error" 1 "ready" 0 "off" 
-VAL_ 126 Mission_status 2 "mission_finished" 1 "mission_running" 0 "mission_not_running" 
+VAL_ 127 CarStatus 2 "error" 1 "ready" 0 "off";
+VAL_ 126 Mission_status 2 "mission_finished" 1 "mission_running" 0 "mission_not_running";
 VAL_ 502 AS_state 5 "finish" 4 "emergency_brake" 3 "driving" 2 "ready" 1 "off";
 VAL_ 502 EBS_state 3 "activated" 2 "armed" 1 "unavailable";
 VAL_ 502 AMI_state 6 "autocross" 5 "inspection" 4 "braketest" 3 "trackdrive" 2 "skidpad" 1 "acceleration";
