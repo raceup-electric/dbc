@@ -33,9 +33,9 @@ NS_ :
 
 BS_:
 
-BU_: BMSHV BMSLV ATC SW VCU SMU PCU LEM AMK
+BU_: BMSHV BMSLV ATC SW VCU SMU PCU LEM AMK EBS
 
-BO_ 60 TanksEBS: 2 Vector__XXX
+BO_ 60 TanksEBS: 2 EBS
  SG_ system_check : 0|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ press_left_tank : 1|5@1+ (0.25,6) [6|10] "Bar" Vector__XXX
  SG_ press_right_tank : 6|5@1+ (0.25,6) [6|10] "Bar" Vector__XXX
@@ -139,7 +139,7 @@ BO_ 112 LapStart: 1 SW
 BO_ 113 CarMissionStatus: 1 VCU
  SG_ Mission : 0|3@1+ (1,0) [0|7] "" SW
  SG_ MissionStatus : 3|2@1+ (1,0) [0|2] "" SW
- SG_ AsStatus: 5|3@1+ (1,0) [0|7] "" SW
+ SG_ AsStatus : 5|3@1+ (1,0) [0|7] "" SW
 
 BO_ 256 Temp1: 8 SMU
 SG_ temp_motor_post_L : 0|16@1+ (1,0) [0|0] "C"  VCU
@@ -166,27 +166,31 @@ BO_ 260 SuspFront: 3 ATC
 BO_ 261 TempFrontR: 3 ATC
  SG_ temp_mot_pot_FR : 0|10@1+ (1,0) [0|0] "C" Vector__XXX
  SG_ temp_mot_pre_FR : 10|10@1+ (1,0) [0|0] "C" Vector__XXX
+ 
+BO_ 264 PressBrake: 2 SMU
+ SG_ press_front : 0|8@1+ (0.25,0) [0|64] "Bar" EBS,VCU
+ SG_ press_rear : 8|8@1+ (0.25,0) [0|64] "Bar" EBS,VCU
 
 BO_ 288 InvVolt: 2 VCU
  SG_ car_voltage : 0|16@1+ (1,0) [0|600] "V"  VCU,SW,BMSHV
 
 BO_ 304 Pcu: 7 VCU
  SG_ mode M : 0|2@1+ (1,0) [0|2] "" Vector__XXX
- SG_ pump_enable_left m0M : 8|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ pump_speed_left m0M : 9|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ pump_enable_right m0M : 16|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ pump_speed_right m0M : 17|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ fanrad_enable_left m0M : 24|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ fanrad_speed_left m0M : 25|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ fanrad_enable_right m0M : 32|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ fanrad_speed_right m0M : 33|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ fanbatt_enable_left m0M : 40|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ fanbatt_speed_left m0M : 41|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ fanbatt_enable_right m0M : 48|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ fanbatt_speed_right m0M : 49|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ rf m1M : 2|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ enable_dv m2M : 2|1@1+ (1,0) [0|1] "on" Vector__XXX
- SG_ enable_embedded m2M : 3|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ pump_enable_left m0 : 8|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ pump_speed_left m0 : 9|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ pump_enable_right m0 : 16|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ pump_speed_right m0 : 17|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ fanrad_enable_left m0 : 24|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ fanrad_speed_left m0 : 25|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ fanrad_enable_right m0 : 32|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ fanrad_speed_right m0 : 33|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ fanbatt_enable_left m0 : 40|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ fanbatt_speed_left m0 : 41|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ fanbatt_enable_right m0 : 48|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ fanbatt_speed_right m0 : 49|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ rf m1 : 2|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ enable_dv m2 : 2|1@1+ (1,0) [0|1] "on" Vector__XXX
+ SG_ enable_embedded m2 : 3|1@1+ (1,0) [0|1] "on" Vector__XXX
 
 BO_ 305 Calib: 1 SW
  SG_ position M : 0|8@1+ (1,0) [0|1] "high" ATC
@@ -260,6 +264,9 @@ CM_ SG_ 102 max_neg_trq "Maximum Negative Torque";
 CM_ SG_ 102 front_motor_repartition "Torque Repartition Front";
 CM_ SG_ 102 rear_motor_repartition "Torque Repartition Rear";
 CM_ SG_ 102 torque_vectoring "Torque Vectoring enabled";
+CM_ BO_ 264 "Hydraulic Brakes Pressures";
+CM_ SG_ 264 PressFront "0 means fault";
+CM_ SG_ 264 PressRear "0 means fault";
 CM_ BO_ 259 "RESERVER FOR SMU mask - DO NOT USE";
 
 
