@@ -29,13 +29,14 @@ def process_dbc_file(dbc_file, title):
             for signal in message.signals:
                 receivers = ', '.join(signal.receivers)
                 message_details += f"| {signal.name} | {signal.start} | {signal.length} | {signal.byte_order} | {signal.is_signed} | {signal.scale} | {signal.offset} | {signal.minimum} | {signal.maximum} | {signal.unit} | {receivers} |\n"
-        if message.signal_tree:
-            message_details += "\n**Enumerations:**\n\n"
-            for signal in message.signals:
-                if signal.choices:
-                    message_details += f"- **{signal.name}**:\n"
-                    for value, description in signal.choices.items():
-                        message_details += f"  - {value}: {description}\n"
+            has_enums = any(signal.choices for signal in message.signals)
+            if has_enums:
+                message_details += "\n**Enumerations:**\n\n"
+                for signal in message.signals:
+                    if signal.choices:
+                        message_details += f"- **{signal.name}**:\n"
+                        for value, description in signal.choices.items():
+                            message_details += f"  - {value}: {description}\n"
         message_details += "\n"
     return index_table, message_details
 
