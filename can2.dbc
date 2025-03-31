@@ -166,7 +166,7 @@ BO_ 260 SuspFront: 3 ATC
 BO_ 261 TempFrontR: 3 ATC
  SG_ temp_mot_pot_FR : 0|10@1+ (1,0) [0|0] "C" Vector__XXX
  SG_ temp_mot_pre_FR : 10|10@1+ (1,0) [0|0] "C" Vector__XXX
- 
+
 BO_ 264 PressBrake: 2 SMU
  SG_ press_front : 0|8@1+ (0.25,0) [0|64] "Bar" EBS,VCU
  SG_ press_rear : 8|8@1+ (0.25,0) [0|64] "Bar" EBS,VCU
