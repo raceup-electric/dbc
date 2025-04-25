@@ -35,12 +35,14 @@ BS_:
 
 BU_: BMSHV BMSLV ATC SW VCU SMU PCU LEM AMK EBS
 
-BO_ 60 TanksEBS: 2 EBS
+BO_ 60 EbsStatus: 2 EBS
  SG_ system_check : 0|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ press_left_tank : 1|5@1+ (0.25,6) [6|10] "Bar" Vector__XXX
  SG_ press_right_tank : 6|5@1+ (0.25,6) [6|10] "Bar" Vector__XXX
  SG_ sanity_left_sensor : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ sanity_right_sensor : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ASB_check : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ brakes_engaged : 14|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 71 CarMission: 1 SW
  SG_ Mission : 0|3@1+ (1,0) [0|7] "" VCU
@@ -112,12 +114,10 @@ BO_ 100 Map: 2 SW
 
 BO_ 101 CarStatus: 2 VCU
  SG_ HV : 0|1@1+ (1,0) [0|0] "on" Vector__XXX
- SG_ R2D : 1|1@1+ (1,0) [0|0] "on" Vector__XXX
- SG_ AIR1 : 3|1@1+ (1,0) [0|0] "closed" Vector__XXX
- SG_ RF : 2|1@1+ (1,0) [0|0] "enabled" Vector__XXX
- SG_ AIR2 : 4|1@1+ (1,0) [0|0] "closed" Vector__XXX
- SG_ precharge : 5|1@1+ (1,0) [0|0] "done" Vector__XXX
- SG_ speed : 8|8@1+ (1,0) [0|0] "km/h" Vector__XXX
+ SG_ AIR1 : 1|1@1+ (1,0) [0|0] "closed" Vector__XXX
+ SG_ AIR2 : 2|1@1+ (1,0) [0|0] "closed" Vector__XXX
+ SG_ RunningStatus : 3|2@1+ (1,0) [0|3] "phase" Vector__XXX
+ SG_ speed : 5|8@1+ (1,0) [0|0] "km/h" Vector__XXX
 
 BO_ 102 CarSettings: 8 VCU
  SG_ max_regen_current : 0|8@1+ (1,0) [0|150] "A" Vector__XXX
@@ -129,9 +129,15 @@ BO_ 102 CarSettings: 8 VCU
  SG_ rear_motor_repartition : 48|8@1+ (1,0) [0|0] "%" Vector__XXX
  SG_ torque_vectoring : 56|1@1+ (1,0) [0|1] "on" Vector__XXX
 
-BO_ 104 CheckASB: 1 Vector__XXX
- SG_ Mode M : 0|1@1+ (1,0) [0|2] "" Vector__XXX
- SG_ response_status m1M : 1|3@1+ (1,0) [0|2] "" Vector__XXX
+BO_ 104 CheckASBReq: 1 VCU
+ SG_ req : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ reqAck : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 105 EbsBrakeReq: 1 VCU 
+ SG_ req : 0|1@1+ (1,0) [0|2] "" Vector__XXX
+
+BO_ 106 ResStatus: 1 Vector__XXX
+ SG_ data : 0|1@1+ (1,0) [0|2] "" Vector__XXX
 
 BO_ 112 LapStart: 1 SW
  SG_ start : 0|8@1+ (1,0) [0|1] "start" Vector__XXX
@@ -271,13 +277,12 @@ CM_ BO_ 259 "RESERVER FOR SMU mask - DO NOT USE";
 
 
 VAL_ 71 Mission 7 "dv_inspection" 6 "dv_ebs_test" 5 "dv_trackdrive" 4 "dv_autocross" 3 "dv_skidpad" 2 "dv_acceleration" 1 "manualy" 0 "none";
+VAL_ 101 RunningStatus 3 "Running" 2 "Ts Ready" 1 "Precharge started" 0 "System off";
 VAL_ 113 Mission 7 "dv_inspection" 6 "dv_ebs_test" 5 "dv_trackdrive" 4 "dv_autocross" 3 "dv_skidpad" 2 "dv_acceleration" 1 "manualy" 0 "none";
 VAL_ 113 MissionStatus 2 "Mission_finished" 1 "Mission_running" 0 "Mission_not_running";
 VAL_ 113 AsStatus 5 "finish" 4 "emergency_brake" 3 "driving" 2 "ready" 1 "off";
-VAL_ 104 response_status 2 "Error" 1 "Failure" 0 "Success";
 VAL_ 307 pump 1 "On" 0 "Off";
 VAL_ 307 fan 1 "On" 0 "Off";
-
 
 
 SIG_VALTYPE_ 96 acc_x : 1;
