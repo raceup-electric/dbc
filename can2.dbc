@@ -35,6 +35,9 @@ BS_:
 
 BU_: BMSHV BMSLV ATC SW VCU SMU PCU LEM AMK EBS
 
+BO_ 32 ResGO: 1 VCU
+ SG_ go_signal : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
 BO_ 60 EbsStatus: 2 EBS
  SG_ system_check : 0|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ press_left_tank : 1|5@1+ (0.25,6) [6|10] "Bar" Vector__XXX
