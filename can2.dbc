@@ -115,12 +115,14 @@ BO_ 100 Map: 2 SW
  SG_ regen : 4|4@1+ (1,0) [1|12] "map"  VCU
  SG_ torque_rep : 8|4@1+ (1,0) [0|12] "map" Vector__XXX
 
-BO_ 101 CarStatus: 2 VCU
+BO_ 101 CarStatus: 4 VCU
  SG_ HV : 0|1@1+ (1,0) [0|0] "on" Vector__XXX
  SG_ AIR1 : 1|1@1+ (1,0) [0|0] "closed" Vector__XXX
  SG_ AIR2 : 2|1@1+ (1,0) [0|0] "closed" Vector__XXX
  SG_ RunningStatus : 3|2@1+ (1,0) [0|3] "phase" Vector__XXX
  SG_ speed : 5|8@1+ (1,0) [0|0] "km/h" Vector__XXX
+ SG_ brake_front_press : 13|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
+ SG_ brake_rear_press : 21|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
 
 BO_ 102 CarSettings: 8 VCU
  SG_ max_regen_current : 0|8@1+ (1,0) [0|150] "A" Vector__XXX
