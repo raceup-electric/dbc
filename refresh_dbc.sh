@@ -25,7 +25,7 @@ mkdir $out_dir
 
 create_lib_can_dbc() {
     echo "creating can${1}.h/c"
-    ./dbcc/dbcc ./can${1}.dbc
+    ./dbcc/dbcc -s ./can${1}.dbc
     sed -i "s/pack_message/pack_message_can${1}/" ./can${1}.h
     sed -i "s/pack_message/pack_message_can${1}/" ./can${1}.c
 
