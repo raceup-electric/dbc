@@ -39,7 +39,7 @@ BU_: VCU AMK
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 1 Vector__XXX
  SG_ Status : 8|8@1+ (1,0) [0|0] ""  VCU
 
-BO_ 643 InverterFL1: 8 AMK
+BO_ 648 InverterFL1: 8 AMK
  SG_ Reserved : 0|8@1+ (1,0) [0|0] ""  VCU
  SG_ ActualVelocity : 16|16@1- (1,0) [0|0] "rpm"  VCU
  SG_ MagCurr : 32|16@1- (1,0) [0|0] ""  VCU
@@ -53,13 +53,13 @@ BO_ 643 InverterFL1: 8 AMK
  SG_ Warning : 10|1@1+ (1,0) [0|0] ""  VCU
  SG_ Derating : 15|1@1+ (1,0) [0|0] ""  VCU
 
-BO_ 645 InverterFL2: 8 AMK
+BO_ 650 InverterFL2: 8 AMK
  SG_ TempMotor : 0|16@1- (0.1,0) [0|0] "C"  VCU
  SG_ TempInv : 16|16@1- (0.1,0) [0|0] "C"  VCU
  SG_ ErrorInfo : 32|16@1+ (1,0) [0|0] ""  VCU
  SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
 
-BO_ 388 VCUInvFL: 8 VCU
+BO_ 393 VCUInvFL: 8 VCU
  SG_ AMK_bReserved : 0|8@1+ (1,0) [0|0] ""  AMK
  SG_ AMK_bInverterOn : 8|1@1+ (1,0) [0|0] "" AMK
  SG_ AMK_bDcOn : 9|1@1+ (1,0) [0|0] "" AMK
@@ -70,7 +70,7 @@ BO_ 388 VCUInvFL: 8 VCU
  SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
  SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
 
-BO_ 644 InverterFR1: 8 AMK
+BO_ 647 InverterFR1: 8 AMK
  SG_ Reserved : 0|8@1+ (1,0) [0|0] ""  VCU
  SG_ ActualVelocity : 16|16@1- (1,0) [0|0] "rpm"  VCU
  SG_ MagCurr : 32|16@1- (1,0) [0|0] ""  VCU
@@ -84,13 +84,13 @@ BO_ 644 InverterFR1: 8 AMK
  SG_ Warning : 10|1@1+ (1,0) [0|0] ""  VCU
  SG_ Derating : 15|1@1+ (1,0) [0|0] ""  VCU
 
-BO_ 646 InverterFR2: 8 AMK
+BO_ 649 InverterFR2: 8 AMK
  SG_ TempMotor : 0|16@1- (0.1,0) [0|0] "C"  VCU
  SG_ TempInv : 16|16@1- (0.1,0) [0|0] "C"  VCU
  SG_ ErrorInfo : 32|16@1+ (1,0) [0|0] ""  VCU
  SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
 
-BO_ 389 VCUInvFR: 8 VCU
+BO_ 392 VCUInvFR: 8 VCU
  SG_ AMK_bReserved : 0|8@1+ (1,0) [0|0] ""  AMK
  SG_ AMK_bInverterOn : 8|1@1+ (1,0) [0|0] "" AMK
  SG_ AMK_bDcOn : 9|1@1+ (1,0) [0|0] "" AMK
@@ -101,7 +101,7 @@ BO_ 389 VCUInvFR: 8 VCU
  SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
  SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
 
-BO_ 647 InverterRL1: 8 AMK
+BO_ 644 InverterRL1: 8 AMK
  SG_ Reserved : 0|8@1+ (1,0) [0|0] ""  VCU
  SG_ ActualVelocity : 16|16@1- (1,0) [0|0] "rpm"  VCU
  SG_ MagCurr : 32|16@1- (1,0) [0|0] ""  VCU
@@ -115,13 +115,13 @@ BO_ 647 InverterRL1: 8 AMK
  SG_ Warning : 10|1@1+ (1,0) [0|0] ""  VCU
  SG_ Derating : 15|1@1+ (1,0) [0|0] ""  VCU
 
-BO_ 649 InverterRL2: 8 AMK
+BO_ 646 InverterRL2: 8 AMK
  SG_ TempMotor : 0|16@1- (0.1,0) [0|0] "C"  VCU
  SG_ TempInv : 16|16@1- (0.1,0) [0|0] "C"  VCU
  SG_ ErrorInfo : 32|16@1+ (1,0) [0|0] ""  VCU
  SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
 
-BO_ 392 VCUInvRL: 8 VCU
+BO_ 389 VCUInvRL: 8 VCU
  SG_ AMK_bReserved : 0|8@1+ (1,0) [0|0] ""  AMK
  SG_ AMK_bInverterOn : 8|1@1+ (1,0) [0|0] "" AMK
  SG_ AMK_bDcOn : 9|1@1+ (1,0) [0|0] "" AMK
@@ -132,7 +132,7 @@ BO_ 392 VCUInvRL: 8 VCU
  SG_ PosTorq : 32|16@1- (0.0098,0) [0|0] "Nm"  AMK
  SG_ NegTorq : 48|16@1- (0.0098,0) [0|0] "Nm"  AMK
 
-BO_ 648 InverterRR1: 8 AMK
+BO_ 643 InverterRR1: 8 AMK
  SG_ Reserved : 0|8@1+ (1,0) [0|0] ""  VCU
  SG_ ActualVelocity : 16|16@1- (1,0) [0|0] "rpm"  VCU
  SG_ MagCurr : 32|16@1- (1,0) [0|0] ""  VCU
@@ -146,13 +146,13 @@ BO_ 648 InverterRR1: 8 AMK
  SG_ Warning : 10|1@1+ (1,0) [0|0] ""  VCU
  SG_ Derating : 15|1@1+ (1,0) [0|0] ""  VCU
 
-BO_ 650 InverterRR2: 8 AMK
+BO_ 645 InverterRR2: 8 AMK
  SG_ TempMotor : 0|16@1- (0.1,0) [0|0] "C"  VCU
  SG_ TempInv : 16|16@1- (0.1,0) [0|0] "C"  VCU
  SG_ ErrorInfo : 32|16@1+ (1,0) [0|0] ""  VCU
  SG_ TempIGBT : 48|16@1- (0.1,0) [0|0] "C"  VCU
 
-BO_ 393 VCUInvRR: 8 VCU
+BO_ 388 VCUInvRR: 8 VCU
  SG_ AMK_bReserved : 0|8@1+ (1,0) [0|0] ""  AMK
  SG_ AMK_bInverterOn : 8|1@1+ (1,0) [0|0] "" AMK
  SG_ AMK_bDcOn : 9|1@1+ (1,0) [0|0] "" AMK
