@@ -4,7 +4,8 @@
 
 | Message Name | ID (Dec) | ID (Hex) | Notes |
 |--------------|---------|----------|-------|
-| [TanksEBS](#tanksebs) | 60 | 0x3C |  |
+| [ResGO](#resgo) | 32 | 0x20 |  |
+| [EbsStatus](#ebsstatus) | 60 | 0x3C |  |
 | [CarMission](#carmission) | 71 | 0x47 |  |
 | [PcuFault](#pcufault) | 81 | 0x51 |  |
 | [Paddle](#paddle) | 82 | 0x52 |  |
@@ -20,7 +21,9 @@
 | [Map](#map) | 100 | 0x64 |  |
 | [CarStatus](#carstatus) | 101 | 0x65 |  |
 | [CarSettings](#carsettings) | 102 | 0x66 |  |
-| [CheckASB](#checkasb) | 104 | 0x68 |  |
+| [CheckASBReq](#checkasbreq) | 104 | 0x68 |  |
+| [EbsBrakeReq](#ebsbrakereq) | 105 | 0x69 |  |
+| [ResStatus](#resstatus) | 106 | 0x6A |  |
 | [LapStart](#lapstart) | 112 | 0x70 |  |
 | [CarMissionStatus](#carmissionstatus) | 113 | 0x71 |  |
 | [Temp1](#temp1) | 256 | 0x100 |  |
@@ -29,16 +32,29 @@
 | [RESERVED2](#reserved2) | 259 | 0x103 | RESERVER FOR SMU mask - DO NOT USE |
 | [SuspFront](#suspfront) | 260 | 0x104 |  |
 | [TempFrontR](#tempfrontr) | 261 | 0x105 |  |
+| [PressBrake](#pressbrake) | 264 | 0x108 | Hydraulic Brakes Pressures |
 | [InvVolt](#invvolt) | 288 | 0x120 |  |
 | [Pcu](#pcu) | 304 | 0x130 |  |
 | [Calib](#calib) | 305 | 0x131 |  |
 | [CalibAck](#caliback) | 306 | 0x132 |  |
 | [PcuSwControl](#pcuswcontrol) | 307 | 0x133 |  |
 | [PcuRfAck](#pcurfack) | 308 | 0x134 |  |
+| [EmbeddedAliveCheck](#embeddedalivecheck) | 310 | 0x136 |  |
 | [Lem](#lem) | 962 | 0x3C2 |  |
 
 
-#### TanksEBS
+#### ResGO
+
+| ID (Dec) | ID (Hex) | DLC |
+|----------|----------|-----|
+| 32 | 0x20 | 1 |
+
+| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
+|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
+| go_signal | 0 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
+
+
+#### EbsStatus
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
@@ -51,9 +67,8 @@
 | press_right_tank | 6 | 5 | little_endian | False | 0.25 | 6 | 6 | 10 | Bar |  |
 | sanity_left_sensor | 11 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
 | sanity_right_sensor | 12 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
-
-**Enumerations:**
-
+| ASB_check | 13 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
+| brakes_engaged | 14 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
 
 
 #### CarMission
@@ -95,9 +110,6 @@
 | fault_fanbattr | 5 | 1 | little_endian | False | 1 | 0 | 0 | 1 | on |  |
 | fault_fanbattl | 6 | 1 | little_endian | False | 1 | 0 | 0 | 1 | on |  |
 
-**Enumerations:**
-
-
 
 #### Paddle
 
@@ -108,9 +120,6 @@
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | regen | 0 | 8 | little_endian | False | 1 | 0 | 0 | 100 | % | VCU |
-
-**Enumerations:**
-
 
 
 #### Driver
@@ -129,9 +138,6 @@
 | pad_implausibility | 30 | 1 | little_endian | False | 1 | 0 | None | None | None |  |
 | pot_implausibility | 31 | 1 | little_endian | False | 1 | 0 | None | None | None |  |
 
-**Enumerations:**
-
-
 
 #### BmsLv1
 
@@ -145,9 +151,6 @@
 | min_volt | 16 | 16 | little_endian | False | 0.1 | 0 | None | None | mV | VCU, SW |
 | avg_volt | 32 | 16 | little_endian | False | 0.1 | 0 | None | None | mV | VCU, SW |
 | soc | 48 | 8 | little_endian | False | 1 | 0 | 0 | 100 | % | VCU, SW |
-
-**Enumerations:**
-
 
 
 #### BmsLv2
@@ -163,9 +166,6 @@
 | avg_temp | 32 | 16 | little_endian | False | 1 | 0 | None | None | C | VCU, SW |
 | fan_speed | 48 | 8 | little_endian | False | 1 | 0 | 0 | 100 | % | VCU, SW |
 
-**Enumerations:**
-
-
 
 #### BmsHv1
 
@@ -179,9 +179,6 @@
 | min_volt | 16 | 16 | little_endian | False | 0.1 | 0 | None | None | mV | VCU, SW |
 | avg_volt | 32 | 16 | little_endian | False | 0.1 | 0 | None | None | mV | VCU, SW |
 | soc | 48 | 8 | little_endian | False | 1 | 0 | 0 | 100 | % | VCU, SW |
-
-**Enumerations:**
-
 
 
 #### BmsHv2
@@ -197,9 +194,6 @@
 | avg_temp | 32 | 16 | little_endian | False | 1 | 0 | None | None | C | VCU, SW |
 | fan_speed | 48 | 8 | little_endian | False | 1 | 0 | 0 | 100 | % | VCU, SW |
 
-**Enumerations:**
-
-
 
 #### Imu1
 
@@ -211,9 +205,6 @@
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | acc_x | 0 | 32 | little_endian | True | 1 | 0 | None | None | m/s^2 | VCU |
 | acc_y | 32 | 32 | little_endian | True | 1 | 0 | None | None | m/s^2 | VCU |
-
-**Enumerations:**
-
 
 
 #### Imu2
@@ -227,9 +218,6 @@
 | acc_z | 0 | 32 | little_endian | True | 1 | 0 | None | None | m/s^2 | VCU |
 | omega_x | 32 | 32 | little_endian | True | 1 | 0 | None | None | rad/s | VCU |
 
-**Enumerations:**
-
-
 
 #### Imu3
 
@@ -241,9 +229,6 @@
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | omega_y | 0 | 32 | little_endian | True | 1 | 0 | None | None | rad/s | VCU |
 | omega_z | 32 | 32 | little_endian | True | 1 | 0 | None | None | rad/s | VCU |
-
-**Enumerations:**
-
 
 
 #### IMUCalib
@@ -258,9 +243,6 @@
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | start_imu_calibration | 0 | 1 | little_endian | False | 1 | 0 | None | None | None |  |
 
-**Enumerations:**
-
-
 
 #### Map
 
@@ -274,28 +256,31 @@
 | regen | 4 | 4 | little_endian | False | 1 | 0 | 1 | 12 | map | VCU |
 | torque_rep | 8 | 4 | little_endian | False | 1 | 0 | 0 | 12 | map |  |
 
-**Enumerations:**
-
-
 
 #### CarStatus
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 101 | 0x65 | 2 |
+| 101 | 0x65 | 4 |
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
-| HV | 0 | 1 | little_endian | False | 1 | 0 | None | None | on |  |
-| R2D | 1 | 1 | little_endian | False | 1 | 0 | None | None | on |  |
-| RF | 2 | 1 | little_endian | False | 1 | 0 | None | None | enabled |  |
-| AIR1 | 3 | 1 | little_endian | False | 1 | 0 | None | None | closed |  |
-| AIR2 | 4 | 1 | little_endian | False | 1 | 0 | None | None | closed |  |
-| precharge | 5 | 1 | little_endian | False | 1 | 0 | None | None | done |  |
-| speed | 8 | 8 | little_endian | False | 1 | 0 | None | None | km/h |  |
+| HV | 0 | 1 | little_endian | False | 1 | 0 | None | None |  Off/On |  |
+| AIR1 | 1 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
+| AIR2 | 2 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
+| AS_NODE | 3 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
+| RunningStatus | 4 | 2 | little_endian | False | 1 | 0 | 0 | 3 |  Phase |  |
+| speed | 6 | 8 | little_endian | False | 1 | 0 | None | None |  km/h |  |
+| brake_front_press | 14 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
+| brake_rear_press | 22 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
 
 **Enumerations:**
 
+- **RunningStatus**:
+  - 3: Running
+  - 2: Ts Ready
+  - 1: Precharge started
+  - 0: System off
 
 
 #### CarSettings
@@ -315,11 +300,8 @@
 | rear_motor_repartition | 48 | 8 | little_endian | False | 1 | 0 | None | None | % |  |
 | torque_vectoring | 56 | 1 | little_endian | False | 1 | 0 | 0 | 1 | on |  |
 
-**Enumerations:**
 
-
-
-#### CheckASB
+#### CheckASBReq
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
@@ -327,15 +309,30 @@
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
-| Mode | 0 | 1 | little_endian | False | 1 | 0 | 0 | 2 | None |  |
-| response_status | 1 | 3 | little_endian | False | 1 | 0 | 0 | 2 | None |  |
+| req | 0 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
+| reqAck | 1 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
 
-**Enumerations:**
 
-- **response_status**:
-  - 2: Error
-  - 1: Failure
-  - 0: Success
+#### EbsBrakeReq
+
+| ID (Dec) | ID (Hex) | DLC |
+|----------|----------|-----|
+| 105 | 0x69 | 1 |
+
+| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
+|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
+| req | 0 | 1 | little_endian | False | 1 | 0 | 0 | 2 | None |  |
+
+
+#### ResStatus
+
+| ID (Dec) | ID (Hex) | DLC |
+|----------|----------|-----|
+| 106 | 0x6A | 1 |
+
+| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
+|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
+| data | 0 | 1 | little_endian | False | 1 | 0 | 0 | 2 | None |  |
 
 
 #### LapStart
@@ -347,9 +344,6 @@
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | start | 0 | 8 | little_endian | False | 1 | 0 | 0 | 1 | start |  |
-
-**Enumerations:**
-
 
 
 #### CarMissionStatus
@@ -400,9 +394,6 @@
 | temp_motor_pre_R | 32 | 16 | little_endian | False | 1 | 0 | None | None | C | VCU |
 | temp_coldplate_pre_R | 48 | 16 | little_endian | False | 1 | 0 | None | None | C | VCU |
 
-**Enumerations:**
-
-
 
 #### Temp2
 
@@ -417,9 +408,6 @@
 | temp_cold_post_L | 32 | 16 | little_endian | False | 1 | 0 | None | None | C | VCU |
 | temp_mot_post_R | 48 | 16 | little_endian | False | 1 | 0 | None | None | C | VCU |
 
-**Enumerations:**
-
-
 
 #### SuspRear
 
@@ -431,9 +419,6 @@
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | susp_rr | 0 | 12 | little_endian | False | 0.1 | 0 | None | None | mm | VCU |
 | susp_rl | 12 | 12 | little_endian | False | 0.1 | 0 | None | None | mm | VCU |
-
-**Enumerations:**
-
 
 
 #### RESERVED2
@@ -457,9 +442,6 @@
 | susp_fr | 0 | 12 | little_endian | False | 0.1 | 0 | None | None | mm | VCU |
 | susp_fl | 12 | 12 | little_endian | False | 0.1 | 0 | None | None | mm | VCU |
 
-**Enumerations:**
-
-
 
 #### TempFrontR
 
@@ -472,8 +454,19 @@
 | temp_mot_pot_FR | 0 | 10 | little_endian | False | 1 | 0 | None | None | C |  |
 | temp_mot_pre_FR | 10 | 10 | little_endian | False | 1 | 0 | None | None | C |  |
 
-**Enumerations:**
 
+#### PressBrake
+
+| ID (Dec) | ID (Hex) | DLC |
+|----------|----------|-----|
+| 264 | 0x108 | 2 |
+
+**Comment:** Hydraulic Brakes Pressures
+
+| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
+|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
+| press_front | 0 | 8 | little_endian | False | 0.25 | 0 | 0 | 64 | Bar | EBS, VCU |
+| press_rear | 8 | 8 | little_endian | False | 0.25 | 0 | 0 | 64 | Bar | EBS, VCU |
 
 
 #### InvVolt
@@ -485,9 +478,6 @@
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | car_voltage | 0 | 16 | little_endian | False | 1 | 0 | 0 | 600 | V | VCU, SW, BMSHV |
-
-**Enumerations:**
-
 
 
 #### Pcu
@@ -515,9 +505,6 @@
 | fanbatt_enable_right | 48 | 1 | little_endian | False | 1 | 0 | 0 | 1 | on |  |
 | fanbatt_speed_right | 49 | 7 | little_endian | False | 1 | 0 | 0 | 100 | % |  |
 
-**Enumerations:**
-
-
 
 #### Calib
 
@@ -529,9 +516,6 @@
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | position | 0 | 8 | little_endian | False | 1 | 0 | 0 | 1 | high | ATC |
 
-**Enumerations:**
-
-
 
 #### CalibAck
 
@@ -542,9 +526,6 @@
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | position | 0 | 8 | little_endian | False | 1 | 0 | 0 | 1 | high | SW |
-
-**Enumerations:**
-
 
 
 #### PcuSwControl
@@ -578,7 +559,12 @@
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | rf_signalAck | 0 | 1 | little_endian | False | 1 | 0 | 0 | 1 | on | VCU |
 
-**Enumerations:**
+
+#### EmbeddedAliveCheck
+
+| ID (Dec) | ID (Hex) | DLC |
+|----------|----------|-----|
+| 310 | 0x136 | 0 |
 
 
 
@@ -591,8 +577,5 @@
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | current | 7 | 32 | big_endian | False | 1 | -2147483648 | None | None | mA | VCU, SW, BMSHV |
-
-**Enumerations:**
-
 
 
