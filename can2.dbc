@@ -120,10 +120,11 @@ BO_ 101 CarStatus: 4 VCU
  SG_ AIR1 : 1|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
  SG_ AIR2 : 2|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
  SG_ AS_NODE: 3|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
- SG_ RunningStatus : 4|2@1+ (1,0) [0|3] " Phase" Vector__XXX
- SG_ speed : 6|8@1+ (1,0) [0|0] " km/h" Vector__XXX
- SG_ brake_front_press : 14|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
- SG_ brake_rear_press : 22|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
+ SG_ rtd_req: 4|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
+ SG_ RunningStatus : 5|2@1+ (1,0) [0|3] " Phase" Vector__XXX
+ SG_ speed : 7|8@1+ (1,0) [0|0] " km/h" Vector__XXX
+ SG_ brake_front_press : 15|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
+ SG_ brake_rear_press : 23|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
 
 BO_ 102 CarSettings: 8 VCU
  SG_ max_regen_current : 0|8@1+ (1,0) [0|150] "A" Vector__XXX

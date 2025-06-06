@@ -269,10 +269,11 @@
 | AIR1 | 1 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
 | AIR2 | 2 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
 | AS_NODE | 3 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
-| RunningStatus | 4 | 2 | little_endian | False | 1 | 0 | 0 | 3 |  Phase |  |
-| speed | 6 | 8 | little_endian | False | 1 | 0 | None | None |  km/h |  |
-| brake_front_press | 14 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
-| brake_rear_press | 22 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
+| rtd_req | 4 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
+| RunningStatus | 5 | 2 | little_endian | False | 1 | 0 | 0 | 3 |  Phase |  |
+| speed | 7 | 8 | little_endian | False | 1 | 0 | None | None |  km/h |  |
+| brake_front_press | 15 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
+| brake_rear_press | 23 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
 
 **Enumerations:**
 
