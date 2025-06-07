@@ -34,6 +34,5 @@ create_lib_can_dbc 1
 create_lib_can_dbc 2
 create_lib_can_dbc 3
 
-create_lib_can_dbc 1_RG07
-create_lib_can_dbc 2_RG07
-create_lib_can_dbc 3_RG07
+create_lib_can_dbc 1_rg07
+create_lib_can_dbc 2_rg07
