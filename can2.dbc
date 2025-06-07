@@ -1,6 +1,5 @@
 VERSION ""
 
-
 NS_ : 
 	NS_DESC_
 	CM_
@@ -46,6 +45,9 @@ BO_ 60 EbsStatus: 2 EBS
  SG_ sanity_right_sensor : 12|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ ASB_check : 13|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ brakes_engaged : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+
+B0_ 65 Asms: 1 PCU
+ SG_ Asms_sens : 0|1@1+ (1,0) [0,1] "high" Vector__XXX
 
 BO_ 71 CarMission: 1 SW
  SG_ Mission : 0|3@1+ (1,0) [0|7] "" VCU
@@ -119,8 +121,8 @@ BO_ 101 CarStatus: 4 VCU
  SG_ HV : 0|1@1+ (1,0) [0|0] " Off/On" Vector__XXX
  SG_ AIR1 : 1|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
  SG_ AIR2 : 2|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
- SG_ AS_NODE: 3|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
- SG_ rtd_req: 4|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
+ SG_ AS_NODE : 3|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
+ SG_ rtd_req : 4|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
  SG_ RunningStatus : 5|2@1+ (1,0) [0|3] " Phase" Vector__XXX
  SG_ speed : 7|8@1+ (1,0) [0|0] " km/h" Vector__XXX
  SG_ brake_front_press : 15|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
