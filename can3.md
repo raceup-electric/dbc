@@ -5,8 +5,7 @@
 | Message Name | ID (Dec) | ID (Hex) | Notes |
 |--------------|---------|----------|-------|
 | [DV_Driver](#dv_driver) | 125 | 0x7D |  |
-| [DV_Mission](#dv_mission) | 126 | 0x7E |  |
-| [DV_CarStatus](#dv_carstatus) | 127 | 0x7F |  |
+| [DV_EMBEDDED_Status](#dv_embedded_status) | 126 | 0x7E |  |
 | [DV_driving_dynamics_1](#dv_driving_dynamics_1) | 500 | 0x1F4 |  |
 | [DV_driving_dynamics_2](#dv_driving_dynamics_2) | 501 | 0x1F5 |  |
 | [DV_system_status](#dv_system_status) | 502 | 0x1F6 |  |
@@ -19,16 +18,14 @@
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 125 | 0x7D | 3 |
+| 125 | 0x7D | 1 |
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
-| Throttle | 0 | 8 | little_endian | False | 1 | 0 | 0 | 100 | % | VCU |
-| Brake | 8 | 8 | little_endian | False | 1 | 0 | 0 | 100 | % | VCU |
-| Steering_angle | 16 | 8 | little_endian | False | 1 | 0 | -90 | 90 | % | VCU |
+| Throttle | 0 | 8 | little_endian | False | 1 | 0 | -100 | 100 | % | VCU |
 
 
-#### DV_Mission
+#### DV_EMBEDDED_Status
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
@@ -36,32 +33,16 @@
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
-| Mission_status | 0 | 2 | little_endian | False | 1 | 0 | 0 | 2 | None | VCU |
+| Embedded_status | 0 | 3 | little_endian | False | 1 | 0 | 1 | 5 | None | VCU |
 
 **Enumerations:**
 
-- **Mission_status**:
-  - 2: mission_finished
-  - 1: mission_running
-  - 0: mission_not_running
-
-
-#### DV_CarStatus
-
-| ID (Dec) | ID (Hex) | DLC |
-|----------|----------|-----|
-| 127 | 0x7F | 1 |
-
-| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
-|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
-| CarStatus | 0 | 2 | little_endian | False | 1 | 0 | 0 | 2 | None | EMBEDDED |
-
-**Enumerations:**
-
-- **CarStatus**:
-  - 2: error
-  - 1: ready
-  - 0: off
+- **Embedded_status**:
+  - 5: finished
+  - 4: error
+  - 3: running
+  - 2: ready
+  - 1: off
 
 
 #### DV_driving_dynamics_1
