@@ -46,8 +46,8 @@ BO_ 60 EbsStatus: 2 EBS
  SG_ ASB_check : 13|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ brakes_engaged : 14|1@1+ (1,0) [0|1] "" Vector__XXX
 
-B0_ 65 Asms: 1 PCU
- SG_ Asms_sens : 0|1@1+ (1,0) [0,1] "high" Vector__XXX
+BO_ 65 Asms: 1 PCU
+ SG_ Asms_sens : 0|1@1+ (1,0) [0|1] "High" Vector__XXX
 
 BO_ 71 CarMission: 1 SW
  SG_ Mission : 0|3@1+ (1,0) [0|7] "" VCU
