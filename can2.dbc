@@ -37,14 +37,17 @@ BU_: BMSHV BMSLV ATC SW VCU SMU PCU LEM AMK EBS
 BO_ 32 ResGO: 1 VCU
  SG_ go_signal : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 60 EbsStatus: 2 EBS
+BO_ 60 EbsStatus: 5 EBS
  SG_ system_check : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ press_left_tank : 1|5@1+ (0.25,6) [6|10] "Bar" Vector__XXX
- SG_ press_right_tank : 6|5@1+ (0.25,6) [6|10] "Bar" Vector__XXX
- SG_ sanity_left_sensor : 11|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ sanity_right_sensor : 12|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ ASB_check : 13|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ brakes_engaged : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sanity_left_sensor : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sanity_right_sensor : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ASB_check : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ brakes_engaged : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ brake_consistency : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ tank_brake_coherence : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ _NOT_IN_USE : 7|1@1+ (0,0) [0|0] "" Vector__XXX
+ SG_ press_left_tank : 8|16@1+ (0.01,0) [0|10] "Bar" Vector__XXX
+ SG_ press_right_tank : 24|16@1+ (0.01,0) [0|10] "Bar" Vector__XXX
 
 BO_ 65 Asms: 1 PCU
  SG_ Asms_sens : 0|1@1+ (1,0) [0|1] "High" Vector__XXX
