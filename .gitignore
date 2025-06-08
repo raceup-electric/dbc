@@ -1,3 +1,4 @@
 gen/./out_lib
 out_lib
 gen
+.venv
