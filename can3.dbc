@@ -36,16 +36,11 @@ BS_:
 BU_: EMBEDDED VCU RES
 
 
-BO_ 125 DV_Driver: 3 EMBEDDED
- SG_ Throttle : 0|8@1+ (1,0) [0|100] "%"  VCU
- SG_ Brake : 8|8@1+ (1,0) [0|100] "%"  VCU
- SG_ Steering_angle : 16|8@1+ (1,0) [-90|90] "%"  VCU
+BO_ 125 DV_Driver: 1 EMBEDDED
+ SG_ Throttle : 0|8@1+ (1,0) [-100|100] "%" VCU
 
-BO_ 126 DV_Mission: 1 EMBEDDED
- SG_ Mission_status : 0|2@1+ (1,0) [0|2] ""  VCU
-
-BO_ 127 DV_CarStatus: 1 VCU
- SG_ CarStatus : 0|2@1+ (1,0) [0|2] ""  EMBEDDED
+BO_ 126 DV_EMBEDDED_Status: 1 EMBEDDED
+ SG_ Embedded_status: 0|3@1+ (1,0) [1|5] "" VCU
 
 BO_ 500 DV_driving_dynamics_1: 8 EMBEDDED
  SG_ Speed_actual : 0|8@1+ (1,0) [0|255] "km/h"  EMBEDDED
@@ -95,8 +90,7 @@ CM_ SG_ 502 AMI_state "AMI state acceleration=1, skidpad=2, trackdrive=3, braket
 CM_ SG_ 502 Service_brake_state "Disengaged=1, Engaged=2, Available=3.";
 CM_ SG_ 1792 On "If byte == 0 then RES is ON";
 CM_ SG_ 0 Address "If 0 then everyone (our case)";
-VAL_ 126 Mission_status 2 "mission_finished" 1 "mission_running" 0 "mission_not_running" ;
-VAL_ 127 CarStatus 2 "error" 1 "ready" 0 "off" ;
+VAL_ 126 Embedded_status 5 "finished" 4 "error" 3 "running" 2 "ready" 1 "off" ;
 VAL_ 502 AS_state 5 "finish" 4 "emergency_brake" 3 "driving" 2 "ready" 1 "off" ;
 VAL_ 502 EBS_state 3 "activated" 2 "armed" 1 "unavailable" ;
 VAL_ 502 AMI_state 6 "autocross" 5 "inspection" 4 "braketest" 3 "trackdrive" 2 "skidpad" 1 "acceleration" ;

@@ -1,6 +1,5 @@
 VERSION ""
 
-
 NS_ : 
 	NS_DESC_
 	CM_
@@ -38,14 +37,20 @@ BU_: BMSHV BMSLV ATC SW VCU SMU PCU LEM AMK EBS
 BO_ 32 ResGO: 1 VCU
  SG_ go_signal : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 60 EbsStatus: 2 EBS
+BO_ 60 EbsStatus: 5 EBS
  SG_ system_check : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ press_left_tank : 1|5@1+ (0.25,6) [6|10] "Bar" Vector__XXX
- SG_ press_right_tank : 6|5@1+ (0.25,6) [6|10] "Bar" Vector__XXX
- SG_ sanity_left_sensor : 11|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ sanity_right_sensor : 12|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ ASB_check : 13|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ brakes_engaged : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sanity_left_sensor : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sanity_right_sensor : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ASB_check : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ brakes_engaged : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ brake_consistency : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ tank_brake_coherence : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ _NOT_IN_USE : 7|1@1+ (0,0) [0|0] "" Vector__XXX
+ SG_ press_left_tank : 8|16@1+ (0.01,0) [0|10] "Bar" Vector__XXX
+ SG_ press_right_tank : 24|16@1+ (0.01,0) [0|10] "Bar" Vector__XXX
+
+BO_ 65 Asms: 1 PCU
+ SG_ Asms_sens : 0|1@1+ (1,0) [0|1] "High" Vector__XXX
 
 BO_ 71 CarMission: 1 SW
  SG_ Mission : 0|3@1+ (1,0) [0|7] "" VCU
@@ -119,8 +124,8 @@ BO_ 101 CarStatus: 4 VCU
  SG_ HV : 0|1@1+ (1,0) [0|0] " Off/On" Vector__XXX
  SG_ AIR1 : 1|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
  SG_ AIR2 : 2|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
- SG_ AS_NODE: 3|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
- SG_ rtd_req: 4|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
+ SG_ AS_NODE : 3|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
+ SG_ rtd_req : 4|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
  SG_ RunningStatus : 5|2@1+ (1,0) [0|3] " Phase" Vector__XXX
  SG_ speed : 7|8@1+ (1,0) [0|0] " km/h" Vector__XXX
  SG_ brake_front_press : 15|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX

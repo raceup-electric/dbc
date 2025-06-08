@@ -6,6 +6,7 @@
 |--------------|---------|----------|-------|
 | [ResGO](#resgo) | 32 | 0x20 |  |
 | [EbsStatus](#ebsstatus) | 60 | 0x3C |  |
+| [Asms](#asms) | 65 | 0x41 |  |
 | [CarMission](#carmission) | 71 | 0x47 |  |
 | [PcuFault](#pcufault) | 81 | 0x51 |  |
 | [Paddle](#paddle) | 82 | 0x52 |  |
@@ -58,17 +59,31 @@
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 60 | 0x3C | 2 |
+| 60 | 0x3C | 5 |
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | system_check | 0 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
-| press_left_tank | 1 | 5 | little_endian | False | 0.25 | 6 | 6 | 10 | Bar |  |
-| press_right_tank | 6 | 5 | little_endian | False | 0.25 | 6 | 6 | 10 | Bar |  |
-| sanity_left_sensor | 11 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
-| sanity_right_sensor | 12 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
-| ASB_check | 13 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
-| brakes_engaged | 14 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
+| sanity_left_sensor | 1 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
+| sanity_right_sensor | 2 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
+| ASB_check | 3 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
+| brakes_engaged | 4 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
+| brake_consistency | 5 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
+| tank_brake_coherence | 6 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
+| _NOT_IN_USE | 7 | 1 | little_endian | False | 0 | 0 | None | None | None |  |
+| press_left_tank | 8 | 16 | little_endian | False | 0.01 | 0 | 0 | 10 | Bar |  |
+| press_right_tank | 24 | 16 | little_endian | False | 0.01 | 0 | 0 | 10 | Bar |  |
+
+
+#### Asms
+
+| ID (Dec) | ID (Hex) | DLC |
+|----------|----------|-----|
+| 65 | 0x41 | 1 |
+
+| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
+|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
+| Asms_sens | 0 | 1 | little_endian | False | 1 | 0 | 0 | 1 | High |  |
 
 
 #### CarMission
