@@ -71,8 +71,8 @@
 | brake_consistency | 5 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
 | tank_brake_coherence | 6 | 1 | little_endian | False | 1 | 0 | 0 | 1 | None |  |
 | _NOT_IN_USE | 7 | 1 | little_endian | False | 0 | 0 | None | None | None |  |
-| press_left_tank | 8 | 16 | little_endian | False | 0.01 | 0 | 0 | 10 | Bar |  |
-| press_right_tank | 24 | 16 | little_endian | False | 0.01 | 0 | 0 | 10 | Bar |  |
+| press_left_tank | 8 | 16 | little_endian | False | 0.001 | 0 | 0 | 10 | Bar |  |
+| press_right_tank | 24 | 16 | little_endian | False | 0.001 | 0 | 0 | 10 | Bar |  |
 
 
 #### Asms
