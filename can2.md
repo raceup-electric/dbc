@@ -282,7 +282,7 @@
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | HV | 0 | 1 | little_endian | False | 1 | 0 | None | None |  Off/On |  |
 | AIR1 | 1 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
-| AIR2 | 2 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
+| precharge | 2 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
 | AS_NODE | 3 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
 | rtd_req | 4 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
 | RunningStatus | 5 | 2 | little_endian | False | 1 | 0 | 0 | 3 |  Phase |  |
