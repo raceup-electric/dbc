@@ -37,7 +37,7 @@ BU_: EMBEDDED VCU RES
 
 
 BO_ 125 DV_Driver: 1 EMBEDDED
- SG_ Throttle : 0|8@1+ (1,0) [-100|100] "%" VCU
+ SG_ Throttle : 0|8@1- (1,0) [-100|100] "%" VCU
 
 BO_ 126 DV_EMBEDDED_Status: 1 EMBEDDED
  SG_ Embedded_status : 0|3@1+ (1,0) [1|5] "" VCU
