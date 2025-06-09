@@ -50,14 +50,14 @@
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 200 | 0xC8 | 4 |
+| 200 | 0xC8 | 8 |
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
-| rpm_fr | 0 | 8 | little_endian | False | 1 | 0 | None | None | rpm | EMBEDDED |
-| rpm_fl | 8 | 8 | little_endian | False | 1 | 0 | None | None | rpm | EMBEDDED |
-| rpm_rr | 16 | 8 | little_endian | False | 1 | 0 | None | None | rpm | EMBEDDED |
-| rpm_rl | 24 | 8 | little_endian | False | 1 | 0 | None | None | rpm | EMBEDDED |
+| rpm_fr | 0 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
+| rpm_fl | 16 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
+| rpm_rr | 32 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
+| rpm_rl | 48 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
 
 
 #### DV_driving_dynamics_1
