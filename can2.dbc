@@ -45,7 +45,7 @@ BO_ 60 EbsStatus: 5 EBS
  SG_ brakes_engaged : 4|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ brake_consistency : 5|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ tank_brake_coherence : 6|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ _NOT_IN_USE : 7|1@1+ (0,0) [0|0] "" Vector__XXX
+ SG_ _NOT_IN_USE : 7|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ press_left_tank : 8|16@1+ (0.001,0) [0|10] "Bar" Vector__XXX
  SG_ press_right_tank : 24|16@1+ (0.001,0) [0|10] "Bar" Vector__XXX
 
