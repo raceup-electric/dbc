@@ -73,7 +73,7 @@ BO_ 502 DV_system_status: 5 EMBEDDED
  SG_ Cones_count_actual : 15|8@1+ (1,0) [0|255] ""  EMBEDDED
  SG_ Cones_count_all : 23|16@1+ (1,0) [0|65535] ""  EMBEDDED
 
-BO_ 1792 DV_RES_On: 1 RES
+BO_ 1809 DV_RES_On: 1 RES
  SG_ On : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 0 DV_RES_OperationalMode: 2 VCU
