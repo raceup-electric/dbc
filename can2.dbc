@@ -186,6 +186,11 @@ BO_ 261 TempFrontR: 3 ATC
  SG_ temp_mot_pot_FR : 0|10@1+ (1,0) [0|0] "C" Vector__XXX
  SG_ temp_mot_pre_FR : 10|10@1+ (1,0) [0|0] "C" Vector__XXX
 
+BO_ 264 HydraulicPressure: 8 VCU
+ SG_ PressFront : 0|32@1+ (1,0) [0|0] " Bar" Vector__XXX
+ SG_ PressRear : 32|32@1+ (1,0) [0|0] " Bar" Vector__XXX
+
+
 BO_ 288 InvVolt: 2 VCU
  SG_ car_voltage : 0|16@1+ (1,0) [0|600] "V"  VCU,SW,BMSHV
 
