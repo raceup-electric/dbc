@@ -125,7 +125,7 @@ BO_ 101 CarStatus: 8 VCU
  SG_ AIR1 : 1|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
  SG_ precharge : 2|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
  SG_ AS_NODE : 3|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
- SG_ SCS: 4|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
+ SG_ SCS : 4|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
  SG_ rtd_req : 5|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
  SG_ RunningStatus : 6|2@1+ (1,0) [0|3] " Phase" Vector__XXX
  SG_ speed : 9|8@1+ (1,0) [0|0] " km/h" Vector__XXX
