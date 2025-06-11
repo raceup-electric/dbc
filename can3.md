@@ -10,7 +10,7 @@
 | [DV_driving_dynamics_1](#dv_driving_dynamics_1) | 500 | 0x1F4 |  |
 | [DV_driving_dynamics_2](#dv_driving_dynamics_2) | 501 | 0x1F5 |  |
 | [DV_system_status](#dv_system_status) | 502 | 0x1F6 |  |
-| [DV_RES_On](#dv_res_on) | 1792 | 0x700 |  |
+| [DV_RES_On](#dv_res_on) | 1809 | 0x711 |  |
 | [DV_RES_OperationalMode](#dv_res_operationalmode) | 0 | 0x0 |  |
 | [DV_RES_Message](#dv_res_message) | 401 | 0x191 |  |
 
@@ -137,16 +137,11 @@
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 1792 | 0x700 | 1 |
+| 1809 | 0x711 | 1 |
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | On | 0 | 8 | little_endian | False | 1 | 0 | None | None | None |  |
-
-**Enumerations:**
-
-- **On**:
-  - 0: ON
 
 
 #### DV_RES_OperationalMode

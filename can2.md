@@ -33,6 +33,7 @@
 | [RESERVED2](#reserved2) | 259 | 0x103 | RESERVER FOR SMU mask - DO NOT USE |
 | [SuspFront](#suspfront) | 260 | 0x104 |  |
 | [TempFrontR](#tempfrontr) | 261 | 0x105 |  |
+| [HydraulicPressure](#hydraulicpressure) | 264 | 0x108 | Hydraulic Brakes Pressures |
 | [InvVolt](#invvolt) | 288 | 0x120 |  |
 | [Pcu](#pcu) | 304 | 0x130 |  |
 | [Calib](#calib) | 305 | 0x131 |  |
@@ -275,19 +276,20 @@
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 101 | 0x65 | 6 |
+| 101 | 0x65 | 8 |
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | HV | 0 | 1 | little_endian | False | 1 | 0 | None | None |  Off/On |  |
 | AIR1 | 1 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
 | precharge | 2 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
-| AS_NODE | 3 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
-| rtd_req | 4 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
-| RunningStatus | 5 | 2 | little_endian | False | 1 | 0 | 0 | 3 |  Phase |  |
-| speed | 8 | 8 | little_endian | False | 1 | 0 | None | None |  km/h |  |
-| brake_front_press | 16 | 16 | little_endian | False | 0.001 | 0 | 0 | 65 | Bar |  |
-| brake_rear_press | 32 | 16 | little_endian | False | 0.001 | 0 | 0 | 65 | Bar |  |
+| AS_NODE | 3 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
+| SCS | 4 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
+| rtd_req | 5 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
+| RunningStatus | 6 | 2 | little_endian | False | 1 | 0 | 0 | 3 |  Phase |  |
+| speed | 9 | 8 | little_endian | False | 1 | 0 | None | None |  km/h |  |
+| brake_front_press | 17 | 16 | little_endian | False | 0.001 | 0 | 0 | 65 | Bar |  |
+| brake_rear_press | 33 | 16 | little_endian | False | 0.001 | 0 | 0 | 65 | Bar |  |
 
 **Enumerations:**
 
@@ -468,6 +470,20 @@
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | temp_mot_pot_FR | 0 | 10 | little_endian | False | 1 | 0 | None | None | C |  |
 | temp_mot_pre_FR | 10 | 10 | little_endian | False | 1 | 0 | None | None | C |  |
+
+
+#### HydraulicPressure
+
+| ID (Dec) | ID (Hex) | DLC |
+|----------|----------|-----|
+| 264 | 0x108 | 8 |
+
+**Comment:** Hydraulic Brakes Pressures
+
+| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
+|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
+| PressFront | 0 | 32 | little_endian | False | 1 | 0 | None | None |  Bar |  |
+| PressRear | 32 | 32 | little_endian | False | 1 | 0 | None | None |  Bar |  |
 
 
 #### InvVolt
