@@ -227,6 +227,22 @@ BO_ 308 PcuRfAck: 1 PCU
 
 BO_ 310 EmbeddedAliveCheck: 0 VCU
 
+BO_ 331 PcuAdc1: 6 PCU
+ SG_ adc_24v : 0|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_pumpl : 16|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_pumpr : 32|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+
+BO_ 332 PcuAdc2: 8 PCU
+ SG_ adc_fanbattl : 0|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_fanbattr : 16|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_fanradl : 32|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_fanradr : 48|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+
+BO_ 333 PcuAdc3: 6 PCU
+ SG_ adc_dv : 0|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_emb : 16|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_steeract : 32|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+
 BO_ 962 Lem: 8 LEM
  SG_ current : 7|32@0+ (1,-2147483648) [0|0] "mA" VCU,SW,BMSHV
 
