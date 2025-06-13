@@ -40,7 +40,6 @@
 | [CalibAck](#caliback) | 306 | 0x132 |  |
 | [PcuSwControl](#pcuswcontrol) | 307 | 0x133 |  |
 | [PcuRfAck](#pcurfack) | 308 | 0x134 |  |
-| [EmbeddedAliveCheck](#embeddedalivecheck) | 310 | 0x136 |  |
 | [PcuAdc1](#pcuadc1) | 331 | 0x14B |  |
 | [PcuAdc2](#pcuadc2) | 332 | 0x14C |  |
 | [PcuAdc3](#pcuadc3) | 333 | 0x14D |  |
@@ -577,14 +576,6 @@
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | rf_signalAck | 0 | 1 | little_endian | False | 1 | 0 | 0 | 1 | on | VCU |
-
-
-#### EmbeddedAliveCheck
-
-| ID (Dec) | ID (Hex) | DLC |
-|----------|----------|-----|
-| 310 | 0x136 | 0 |
-
 
 
 #### PcuAdc1
