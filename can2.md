@@ -33,7 +33,7 @@
 | [RESERVED2](#reserved2) | 259 | 0x103 | RESERVER FOR SMU mask - DO NOT USE |
 | [SuspFront](#suspfront) | 260 | 0x104 |  |
 | [TempFrontR](#tempfrontr) | 261 | 0x105 |  |
-| [PressBrake](#pressbrake) | 264 | 0x108 | Hydraulic Brakes Pressures |
+| [HydraulicPressure](#hydraulicpressure) | 264 | 0x108 | Hydraulic Brakes Pressures |
 | [InvVolt](#invvolt) | 288 | 0x120 |  |
 | [Pcu](#pcu) | 304 | 0x130 |  |
 | [Calib](#calib) | 305 | 0x131 |  |
@@ -282,13 +282,14 @@
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | HV | 0 | 1 | little_endian | False | 1 | 0 | None | None |  Off/On |  |
 | AIR1 | 1 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
-| AIR2 | 2 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
+| precharge | 2 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
 | AS_NODE | 3 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
-| rtd_req | 4 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
-| RunningStatus | 5 | 2 | little_endian | False | 1 | 0 | 0 | 3 |  Phase |  |
-| speed | 7 | 8 | little_endian | False | 1 | 0 | None | None |  km/h |  |
-| brake_front_press | 15 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
-| brake_rear_press | 23 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
+| SCS | 4 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
+| rtd_req | 5 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
+| RunningStatus | 6 | 2 | little_endian | False | 1 | 0 | 0 | 3 |  Phase |  |
+| speed | 8 | 8 | little_endian | False | 1 | 0 | None | None |  km/h |  |
+| brake_front_press | 16 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
+| brake_rear_press | 24 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
 
 **Enumerations:**
 
@@ -471,18 +472,18 @@
 | temp_mot_pre_FR | 10 | 10 | little_endian | False | 1 | 0 | None | None | C |  |
 
 
-#### PressBrake
+#### HydraulicPressure
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 264 | 0x108 | 2 |
+| 264 | 0x108 | 8 |
 
 **Comment:** Hydraulic Brakes Pressures
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
-| press_front | 0 | 8 | little_endian | False | 0.25 | 0 | 0 | 64 | Bar | EBS, VCU |
-| press_rear | 8 | 8 | little_endian | False | 0.25 | 0 | 0 | 64 | Bar | EBS, VCU |
+| PressFront | 0 | 32 | little_endian | False | 0.25 | 0 | None | None | Bar | EBS, VCU |
+| PressRear | 32 | 32 | little_endian | False | 0.25 | 0 | None | None | Bar | EBS, VCU |
 
 
 #### InvVolt

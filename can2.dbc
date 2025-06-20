@@ -123,13 +123,14 @@ BO_ 100 Map: 2 SW
 BO_ 101 CarStatus: 4 VCU
  SG_ HV : 0|1@1+ (1,0) [0|0] " Off/On" Vector__XXX
  SG_ AIR1 : 1|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
- SG_ AIR2 : 2|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
+ SG_ precharge: 2|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
  SG_ AS_NODE : 3|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
- SG_ rtd_req : 4|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
- SG_ RunningStatus : 5|2@1+ (1,0) [0|3] " Phase" Vector__XXX
- SG_ speed : 7|8@1+ (1,0) [0|0] " km/h" Vector__XXX
- SG_ brake_front_press : 15|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
- SG_ brake_rear_press : 23|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
+ SG_ SCS: 4|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
+ SG_ rtd_req : 5|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
+ SG_ RunningStatus : 6|2@1+ (1,0) [0|3] " Phase" Vector__XXX
+ SG_ speed : 8|8@1+ (1,0) [0|0] " km/h" Vector__XXX
+ SG_ brake_front_press : 16|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
+ SG_ brake_rear_press : 24|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
 
 BO_ 102 CarSettings: 8 VCU
  SG_ max_regen_current : 0|8@1+ (1,0) [0|150] "A" Vector__XXX
@@ -185,9 +186,9 @@ BO_ 261 TempFrontR: 3 ATC
  SG_ temp_mot_pot_FR : 0|10@1+ (1,0) [0|0] "C" Vector__XXX
  SG_ temp_mot_pre_FR : 10|10@1+ (1,0) [0|0] "C" Vector__XXX
 
-BO_ 264 PressBrake: 2 SMU
- SG_ press_front : 0|8@1+ (0.25,0) [0|64] "Bar" EBS,VCU
- SG_ press_rear : 8|8@1+ (0.25,0) [0|64] "Bar" EBS,VCU
+BO_ 264 HydraulicPressure: 8 VCU
+ SG_ PressFront : 0|32@1+ (0.25,0) [0|0] "Bar" EBS,VCU
+ SG_ PressRear : 32|32@1+ (0.25,0) [0|0] "Bar" EBS,VCU
 
 BO_ 288 InvVolt: 2 VCU
  SG_ car_voltage : 0|16@1+ (1,0) [0|600] "V"  VCU,SW,BMSHV
