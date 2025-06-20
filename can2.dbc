@@ -76,17 +76,16 @@ BO_ 83 Driver: 4 ATC
  SG_ pad_implausibility : 30|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ pot_implausibility : 31|1@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 84 BmsLv1: 7 BMSHV
+BO_ 84 BmsLv1: 8 BMSHV
  SG_ max_volt : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ min_volt : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ avg_volt : 32|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
- SG_ soc : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
+ SG_ tot_volt : 48|16@1+ (1,0) [0|0] "V"  VCU,SW
 
-BO_ 85 BmsLv2: 7 BMSHV
+BO_ 85 BmsLv2: 6 BMSHV
  SG_ max_temp : 0|16@1+ (1,0) [0|0] "C"  VCU,SW
  SG_ min_temp : 16|16@1+ (1,0) [0|0] "C"  VCU,SW
  SG_ avg_temp : 32|16@1+ (1,0) [0|0] "C"  VCU,SW
- SG_ fan_speed : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
 
 BO_ 87 BmsHv1: 7 BMSHV
  SG_ max_volt : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
@@ -225,7 +224,21 @@ BO_ 307 PcuSwControl: 1 SW
 BO_ 308 PcuRfAck: 1 PCU
  SG_ rf_signalAck : 0|1@1+ (1,0) [0|1] "on" VCU
 
-BO_ 310 EmbeddedAliveCheck: 0 VCU
+BO_ 331 PcuAdc1: 6 PCU
+ SG_ adc_24v : 0|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_pumpl : 16|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_pumpr : 32|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+
+BO_ 332 PcuAdc2: 8 PCU
+ SG_ adc_fanbattl : 0|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_fanbattr : 16|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_fanradl : 32|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_fanradr : 48|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+
+BO_ 333 PcuAdc3: 6 PCU
+ SG_ adc_dv : 0|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_emb : 16|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_steeract : 32|16@1+ (0.001,0) [0|30] "A" Vector__XXX
 
 BO_ 962 Lem: 8 LEM
  SG_ current : 7|32@0+ (1,-2147483648) [0|0] "mA" VCU,SW,BMSHV

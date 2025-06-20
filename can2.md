@@ -40,7 +40,9 @@
 | [CalibAck](#caliback) | 306 | 0x132 |  |
 | [PcuSwControl](#pcuswcontrol) | 307 | 0x133 |  |
 | [PcuRfAck](#pcurfack) | 308 | 0x134 |  |
-| [EmbeddedAliveCheck](#embeddedalivecheck) | 310 | 0x136 |  |
+| [PcuAdc1](#pcuadc1) | 331 | 0x14B |  |
+| [PcuAdc2](#pcuadc2) | 332 | 0x14C |  |
+| [PcuAdc3](#pcuadc3) | 333 | 0x14D |  |
 | [Lem](#lem) | 962 | 0x3C2 |  |
 
 
@@ -158,28 +160,27 @@
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 84 | 0x54 | 7 |
+| 84 | 0x54 | 8 |
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | max_volt | 0 | 16 | little_endian | False | 0.1 | 0 | None | None | mV | VCU, SW |
 | min_volt | 16 | 16 | little_endian | False | 0.1 | 0 | None | None | mV | VCU, SW |
 | avg_volt | 32 | 16 | little_endian | False | 0.1 | 0 | None | None | mV | VCU, SW |
-| soc | 48 | 8 | little_endian | False | 1 | 0 | 0 | 100 | % | VCU, SW |
+| tot_volt | 48 | 16 | little_endian | False | 1 | 0 | None | None | V | VCU, SW |
 
 
 #### BmsLv2
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 85 | 0x55 | 7 |
+| 85 | 0x55 | 6 |
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | max_temp | 0 | 16 | little_endian | False | 1 | 0 | None | None | C | VCU, SW |
 | min_temp | 16 | 16 | little_endian | False | 1 | 0 | None | None | C | VCU, SW |
 | avg_temp | 32 | 16 | little_endian | False | 1 | 0 | None | None | C | VCU, SW |
-| fan_speed | 48 | 8 | little_endian | False | 1 | 0 | 0 | 100 | % | VCU, SW |
 
 
 #### BmsHv1
@@ -577,12 +578,44 @@
 | rf_signalAck | 0 | 1 | little_endian | False | 1 | 0 | 0 | 1 | on | VCU |
 
 
-#### EmbeddedAliveCheck
+#### PcuAdc1
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 310 | 0x136 | 0 |
+| 331 | 0x14B | 6 |
 
+| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
+|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
+| adc_24v | 0 | 16 | little_endian | False | 0.001 | 0 | 0 | 30 | A |  |
+| adc_pumpl | 16 | 16 | little_endian | False | 0.001 | 0 | 0 | 30 | A |  |
+| adc_pumpr | 32 | 16 | little_endian | False | 0.001 | 0 | 0 | 30 | A |  |
+
+
+#### PcuAdc2
+
+| ID (Dec) | ID (Hex) | DLC |
+|----------|----------|-----|
+| 332 | 0x14C | 8 |
+
+| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
+|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
+| adc_fanbattl | 0 | 16 | little_endian | False | 0.001 | 0 | 0 | 30 | A |  |
+| adc_fanbattr | 16 | 16 | little_endian | False | 0.001 | 0 | 0 | 30 | A |  |
+| adc_fanradl | 32 | 16 | little_endian | False | 0.001 | 0 | 0 | 30 | A |  |
+| adc_fanradr | 48 | 16 | little_endian | False | 0.001 | 0 | 0 | 30 | A |  |
+
+
+#### PcuAdc3
+
+| ID (Dec) | ID (Hex) | DLC |
+|----------|----------|-----|
+| 333 | 0x14D | 6 |
+
+| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
+|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
+| adc_dv | 0 | 16 | little_endian | False | 0.001 | 0 | 0 | 30 | A |  |
+| adc_emb | 16 | 16 | little_endian | False | 0.001 | 0 | 0 | 30 | A |  |
+| adc_steeract | 32 | 16 | little_endian | False | 0.001 | 0 | 0 | 30 | A |  |
 
 
 #### Lem
