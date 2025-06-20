@@ -76,17 +76,16 @@ BO_ 83 Driver: 4 ATC
  SG_ pad_implausibility : 30|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ pot_implausibility : 31|1@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 84 BmsLv1: 7 BMSHV
+BO_ 84 BmsLv1: 8 BMSHV
  SG_ max_volt : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ min_volt : 16|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
  SG_ avg_volt : 32|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
- SG_ soc : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
+ SG_ tot_volt : 48|16@1+ (1,0) [0|0] "V"  VCU,SW
 
-BO_ 85 BmsLv2: 7 BMSHV
+BO_ 85 BmsLv2: 6 BMSHV
  SG_ max_temp : 0|16@1+ (1,0) [0|0] "C"  VCU,SW
  SG_ min_temp : 16|16@1+ (1,0) [0|0] "C"  VCU,SW
  SG_ avg_temp : 32|16@1+ (1,0) [0|0] "C"  VCU,SW
- SG_ fan_speed : 48|8@1+ (1,0) [0|100] "%"  VCU,SW
 
 BO_ 87 BmsHv1: 7 BMSHV
  SG_ max_volt : 0|16@1+ (0.1,0) [0|0] "mV"  VCU,SW
@@ -120,16 +119,17 @@ BO_ 100 Map: 2 SW
  SG_ regen : 4|4@1+ (1,0) [1|12] "map"  VCU
  SG_ torque_rep : 8|4@1+ (1,0) [0|12] "map" Vector__XXX
 
-BO_ 101 CarStatus: 4 VCU
+BO_ 101 CarStatus: 8 VCU
  SG_ HV : 0|1@1+ (1,0) [0|0] " Off/On" Vector__XXX
  SG_ AIR1 : 1|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
- SG_ AIR2 : 2|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
- SG_ AS_NODE : 3|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
- SG_ rtd_req : 4|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
- SG_ RunningStatus : 5|2@1+ (1,0) [0|3] " Phase" Vector__XXX
- SG_ speed : 7|8@1+ (1,0) [0|0] " km/h" Vector__XXX
- SG_ brake_front_press : 15|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
- SG_ brake_rear_press : 23|8@1+ (0.25,0) [0|60] "Bar" Vector__XXX
+ SG_ precharge : 2|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
+ SG_ AS_NODE : 3|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
+ SG_ SCS : 4|1@1+ (1,0) [0|0] " Closed/Open" Vector__XXX
+ SG_ rtd_req : 5|1@1+ (1,0) [0|0] " Open/Closed" Vector__XXX
+ SG_ RunningStatus : 6|2@1+ (1,0) [0|3] " Phase" Vector__XXX
+ SG_ speed : 9|8@1+ (1,0) [0|0] " km/h" Vector__XXX
+ SG_ brake_front_press : 17|16@1+ (0.001,0) [0|65] "Bar" Vector__XXX
+ SG_ brake_rear_press : 33|16@1+ (0.001,0) [0|65] "Bar" Vector__XXX
 
 BO_ 102 CarSettings: 8 VCU
  SG_ max_regen_current : 0|8@1+ (1,0) [0|150] "A" Vector__XXX
@@ -185,9 +185,10 @@ BO_ 261 TempFrontR: 3 ATC
  SG_ temp_mot_pot_FR : 0|10@1+ (1,0) [0|0] "C" Vector__XXX
  SG_ temp_mot_pre_FR : 10|10@1+ (1,0) [0|0] "C" Vector__XXX
 
-BO_ 264 PressBrake: 2 SMU
- SG_ press_front : 0|8@1+ (0.25,0) [0|64] "Bar" EBS,VCU
- SG_ press_rear : 8|8@1+ (0.25,0) [0|64] "Bar" EBS,VCU
+BO_ 264 HydraulicPressure: 8 VCU
+ SG_ PressFront : 0|32@1+ (1,0) [0|0] " Bar" Vector__XXX
+ SG_ PressRear : 32|32@1+ (1,0) [0|0] " Bar" Vector__XXX
+
 
 BO_ 288 InvVolt: 2 VCU
  SG_ car_voltage : 0|16@1+ (1,0) [0|600] "V"  VCU,SW,BMSHV
@@ -223,7 +224,21 @@ BO_ 307 PcuSwControl: 1 SW
 BO_ 308 PcuRfAck: 1 PCU
  SG_ rf_signalAck : 0|1@1+ (1,0) [0|1] "on" VCU
 
-BO_ 310 EmbeddedAliveCheck: 0 VCU
+BO_ 331 PcuAdc1: 6 PCU
+ SG_ adc_24v : 0|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_pumpl : 16|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_pumpr : 32|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+
+BO_ 332 PcuAdc2: 8 PCU
+ SG_ adc_fanbattl : 0|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_fanbattr : 16|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_fanradl : 32|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_fanradr : 48|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+
+BO_ 333 PcuAdc3: 6 PCU
+ SG_ adc_dv : 0|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_emb : 16|16@1+ (0.001,0) [0|30] "A" Vector__XXX
+ SG_ adc_steeract : 32|16@1+ (0.001,0) [0|30] "A" Vector__XXX
 
 BO_ 962 Lem: 8 LEM
  SG_ current : 7|32@0+ (1,-2147483648) [0|0] "mA" VCU,SW,BMSHV

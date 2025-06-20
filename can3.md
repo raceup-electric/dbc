@@ -6,10 +6,11 @@
 |--------------|---------|----------|-------|
 | [DV_Driver](#dv_driver) | 125 | 0x7D |  |
 | [DV_EMBEDDED_Status](#dv_embedded_status) | 126 | 0x7E |  |
+| [DV_Rpm](#dv_rpm) | 200 | 0xC8 |  |
 | [DV_driving_dynamics_1](#dv_driving_dynamics_1) | 500 | 0x1F4 |  |
 | [DV_driving_dynamics_2](#dv_driving_dynamics_2) | 501 | 0x1F5 |  |
 | [DV_system_status](#dv_system_status) | 502 | 0x1F6 |  |
-| [DV_RES_On](#dv_res_on) | 1792 | 0x700 |  |
+| [DV_RES_On](#dv_res_on) | 1809 | 0x711 |  |
 | [DV_RES_OperationalMode](#dv_res_operationalmode) | 0 | 0x0 |  |
 | [DV_RES_Message](#dv_res_message) | 401 | 0x191 |  |
 
@@ -22,7 +23,7 @@
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
-| Throttle | 0 | 8 | little_endian | False | 1 | 0 | -100 | 100 | % | VCU |
+| Throttle | 0 | 8 | little_endian | True | 1 | 0 | -100 | 100 | % | VCU |
 
 
 #### DV_EMBEDDED_Status
@@ -43,6 +44,20 @@
   - 3: running
   - 2: ready
   - 1: off
+
+
+#### DV_Rpm
+
+| ID (Dec) | ID (Hex) | DLC |
+|----------|----------|-----|
+| 200 | 0xC8 | 8 |
+
+| Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
+|-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
+| rpm_fr | 0 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
+| rpm_fl | 16 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
+| rpm_rr | 32 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
+| rpm_rl | 48 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
 
 
 #### DV_driving_dynamics_1
@@ -122,16 +137,11 @@
 
 | ID (Dec) | ID (Hex) | DLC |
 |----------|----------|-----|
-| 1792 | 0x700 | 1 |
+| 1809 | 0x711 | 1 |
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
 | On | 0 | 8 | little_endian | False | 1 | 0 | None | None | None |  |
-
-**Enumerations:**
-
-- **On**:
-  - 0: ON
 
 
 #### DV_RES_OperationalMode
