@@ -54,10 +54,10 @@
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
-| rpm_fr | 0 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
-| rpm_fl | 16 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
-| rpm_rr | 32 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
-| rpm_rl | 48 | 16 | little_endian | False | 1 | 0 | 0 | 18000 | rpm | EMBEDDED |
+| rpm_fl | 0 | 16 | little_endian | False | 1 | 0 | None | None | None |  |
+| rpm_fr | 16 | 16 | little_endian | False | 1 | 0 | None | None | None |  |
+| rpm_rl | 32 | 16 | little_endian | False | 1 | 0 | None | None | None |  |
+| rpm_rr | 48 | 16 | little_endian | False | 1 | 0 | None | None | None |  |
 
 
 #### DV_driving_dynamics_1

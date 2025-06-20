@@ -43,10 +43,10 @@ BO_ 126 DV_EMBEDDED_Status: 1 EMBEDDED
  SG_ Embedded_status : 0|3@1+ (1,0) [1|5] "" VCU
 
 BO_ 200 DV_Rpm: 8 VCU
- SG_ rpm_fr : 0|16@1+ (1,0) [0|18000] "rpm" EMBEDDED
- SG_ rpm_fl : 16|16@1+ (1,0) [0|18000] "rpm" EMBEDDED
- SG_ rpm_rr : 32|16@1+ (1,0) [0|18000] "rpm" EMBEDDED
- SG_ rpm_rl : 48|16@1+ (1,0) [0|18000] "rpm" EMBEDDED
+ SG_ rpm_fl : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ rpm_fr : 16|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ rpm_rl : 32|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ rpm_rr : 48|16@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 500 DV_driving_dynamics_1: 8 EMBEDDED
  SG_ Speed_actual : 0|8@1+ (1,0) [0|255] "km/h"  EMBEDDED

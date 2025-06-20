@@ -284,13 +284,13 @@
 | HV | 0 | 1 | little_endian | False | 1 | 0 | None | None |  Off/On |  |
 | AIR1 | 1 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
 | precharge | 2 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
-| AS_NODE | 3 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
-| SCS | 4 | 1 | little_endian | False | 1 | 0 | None | None |  Closed/Open |  |
+| AS_NODE | 3 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
+| SCS | 4 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
 | rtd_req | 5 | 1 | little_endian | False | 1 | 0 | None | None |  Open/Closed |  |
 | RunningStatus | 6 | 2 | little_endian | False | 1 | 0 | 0 | 3 |  Phase |  |
-| speed | 9 | 8 | little_endian | False | 1 | 0 | None | None |  km/h |  |
-| brake_front_press | 17 | 16 | little_endian | False | 0.001 | 0 | 0 | 65 | Bar |  |
-| brake_rear_press | 33 | 16 | little_endian | False | 0.001 | 0 | 0 | 65 | Bar |  |
+| speed | 8 | 8 | little_endian | False | 1 | 0 | None | None |  km/h |  |
+| brake_front_press | 16 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
+| brake_rear_press | 24 | 8 | little_endian | False | 0.25 | 0 | 0 | 60 | Bar |  |
 
 **Enumerations:**
 
@@ -483,8 +483,8 @@
 
 | Signal Name | Start Bit | Length | Byte Order | Value Type | Factor | Offset | Min | Max | Unit | Receiver |
 |-------------|-----------|--------|------------|------------|--------|--------|-----|-----|------|----------|
-| PressFront | 0 | 32 | little_endian | False | 1 | 0 | None | None |  Bar |  |
-| PressRear | 32 | 32 | little_endian | False | 1 | 0 | None | None |  Bar |  |
+| PressFront | 0 | 32 | little_endian | False | 0.25 | 0 | None | None | Bar | EBS, VCU |
+| PressRear | 32 | 32 | little_endian | False | 0.25 | 0 | None | None | Bar | EBS, VCU |
 
 
 #### InvVolt
